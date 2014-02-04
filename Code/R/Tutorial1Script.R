@@ -1,5 +1,5 @@
 getwd();
-workingDir = "C:/Users/Taghi/Desktop/Internship";
+workingDir = "C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/Code/R";
 setwd(workingDir);
 library(WGCNA);
 options(stringsAsFactors = FALSE);

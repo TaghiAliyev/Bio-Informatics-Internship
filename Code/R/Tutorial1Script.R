@@ -7,8 +7,14 @@ femData = read.csv("LiverFemale3600.csv");
 dim(femData);
 names(femData);
 
+# Reading off correct columns/rows as first 8 are just string.
 datExpr0 = as.data.frame(t(femData[,-c(1:8)]));
+
+# Getting the names of substances. substanceBXH is just a column name.
 names(datExpr0) = femData$substanceBXH;
+
+
+#same idea of reading data.
 rownames(datExpr0) = names(femData)[-c(1:8)];
 
 gsg = goodSamplesGenes(datExpr0,verbose = 3);
@@ -25,16 +31,21 @@ if (!gsg$allOK)
 	datExpr0 = datExpr0[gsg$goodSamples,gsg$goodGenes]
 }
 
+# flash clust is quick clustering algorithm that finds distances between stuff.
 sampleTree = flashClust(dist(datExpr0),method = "average");
 sizeGrWindow(12,9);
 
+# Just plotting stuff.
 par(cex = 0.6);
 par(mar = c(0,4,2,0))
 plot(sampleTree,main = "Sample clustering to detect outliers", sub="",xlab="",cex.lab=1.5,cex.axis = 1.5,cex.main = 2)
 
+# Delete everything over that line and show the line.
+
 abline(h = 15, col = "red");
 clust = cutreeStatic(sampleTree,cutHeight = 15, minSize = 10)
 table(clust)
+
 keepSamples = (clust==1)
 datExpr = datExpr0[keepSamples,]
 nGenes = ncol(datExpr)
@@ -57,6 +68,7 @@ datTraits = allTraits[traitRows,-1];
 rownames(datTraits) = allTraits[traitRows,1];
 
 collectGarbage();
+
 
 sampleTree2 = flashClust(dist(datExpr),method = "average")
 traitColors = numbers2colors(datTraits,signed = FALSE);

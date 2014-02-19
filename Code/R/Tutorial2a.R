@@ -1,5 +1,5 @@
 getwd();
-workingDir = "C:/Users/Taghi/Desktop/Internship";
+workingDir = "C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/Code/R";
 setwd(workingDir);
 library(WGCNA)
 options(stringsAsFactors = FALSE);
@@ -8,11 +8,10 @@ options(stringsAsFactors = FALSE);
 enableWGCNAThreads()
 # Loading of file
 lnames = load(file = "FemaleLiver-01-dataInput.RData");
-lnames
 
 # Generating Weighted network using 1-step network construction
-powers = c(c(1:10),seq(from = 12,to = 20, by = 2))
-sft = pickSoftThreshold(datExpr,powerVector = powers , verbose = 5)
+powers = c(c(1:10),seq(from = 12,to = 20, by = 2));
+sft = pickSoftThreshold(datExpr,powerVector = powers , verbose = 5);
 
 sizeGrWindow(9,5)
 par(mfrow = c(1,2));
@@ -23,7 +22,6 @@ plot(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],
 	ylab = "Scale Free Topology Model Fit, signed R^2",
 	type = "n", main = paste("Scale Independence"));
 
-Taghi = 10
 text(sft$fitIndices[,1], -sign(sft$fitIndices[,3])*sft$fitIndices[,2],
 labels=powers,cex=cex1,col="red");
 
@@ -35,12 +33,15 @@ text(sft$fitIndices[,1], sft$fitIndices[,5],powers, cex1, col="red")
 
 #Constructing actual network
 
+enableWGCNAThreads();
 network = blockwiseModules(datExpr,power = 6, TOMType = "unsigned", minModuleSize = 30,
 		reassignThreshold = 0, mergeCutHeight = 0.25, 
 		numericLabels = TRUE, pamRespectsDendro = FALSE, saveTOMs = TRUE, 
-		saveTOMFileBase="femaleMouseTOM",verbose = 3)
+		saveTOMFileBase="femaleMouseTOM",verbose = 3);
 
+network;
 
+table(network$colors);
 sizeGrWindow(12, 9)
 mergedColors = labels2colors(network$colors)
 plotDendroAndColors(network$dendrograms[[1]],mergedColors[network$blockGenes[[1]]],

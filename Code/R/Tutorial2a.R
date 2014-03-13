@@ -39,7 +39,6 @@ network = blockwiseModules(datExpr,power = 6, TOMType = "unsigned", minModuleSiz
 		numericLabels = TRUE, pamRespectsDendro = FALSE, saveTOMs = TRUE, 
 		saveTOMFileBase="femaleMouseTOM",verbose = 3);
 
-network;
 
 table(network$colors);
 sizeGrWindow(12, 9)

@@ -1,0 +1,213 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Short title]{Sense making of cardiovascular diseases using network analysis} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Taghi Aliyev} % Your name
+\institute[MUMC+] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+MUMC+ \\ % Your institution for the title page
+\medskip
+\textit{taghialiyev@gmail.com} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+%\section{Introduction}
+\begin{frame}
+\frametitle{Outline}
+\begin{itemize}
+\item \textbf{Introduction}
+	\begin{itemize}
+		\item What is the topic
+	\end{itemize}
+	\vspace{1mm}
+\item \textbf{Small recap of last time}
+	\begin{itemize}
+		\item Where
+		\item Some facts
+	\end{itemize}
+	\vspace{1mm}
+\item \textbf{New stuff}
+	\begin{itemize}
+		\item Software tools that I will use
+		\item Techniques (Not completely decided, just bunch of techniques)
+	\end{itemize}
+\vspace{1mm}
+\item \textbf{Main research questions}
+\vspace{1mm}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Introduction}
+\begin{itemize}
+\item \textbf{What} is the topic?
+	\begin{itemize}
+		\item Research on network analysis of cardiovascular diseases
+		\item Array data (I will show example)
+		\item Computational problem because of the data size (n = 500, 10-15 thousand attributes)
+	\end{itemize}
+	\vspace{1mm}
+\item \textbf{Why} is this important?
+	\begin{itemize}
+		\item People die and we do not want that
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Small Recap}
+\begin{itemize}
+	\item \textbf{Where?}
+	\begin{itemize}
+		\item MUMC+(Maastricht Hospital) + supervision from CERN(with chance of possible visit)
+	\end{itemize}
+	\item \textbf{No heartbeat = Dead(returns true in 100 percent of cases)}
+	\item \textbf{Atherosclerosis}
+	\begin{itemize}
+		\item Is a disease in which plaque builds up inside your arteries
+		\item Leads to heart attacks, stroke and sometimes death
+		\item Is one of the main causes for death of people
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{New stuff}
+\begin{itemize}
+\item \textbf{Software tools}
+	\begin{itemize}
+		\item R
+		\item WEKA
+		\item Java
+		\item Cytoscape(Optional, mainly for visualization purposes)
+		\item GLPK
+	\end{itemize}
+\item \textbf{Possible techniques}
+	\begin{itemize}
+		\item WGCNA(Weighted Gene Co-Expression Network Analysis)
+		\item Artificial Neural Networks
+		\item Network Simplex Method (Min cut problem)
+		\item Bunch of other data mining/machine learning techniques
+		\begin{itemize}
+			\item Clusterings, SVM, Regression(Multivariate) etc.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Main research questions}
+	\begin{itemize}
+		\item Can we model how human genes react to cardiovascular diseases?
+		\item Can we predict heart attack, stroke for some given patient given information about patient?
+		\item Can we find regulatory genes concerning this disease?
+		\item Main of all : Can we cure it? Or decrease it to almost non-existing amount?
+	\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Thanks}
+	\begin{itemize}
+		\item Thanks for listening and if there are any questions I would like to give a try at answering them :)
+	\end{itemize}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

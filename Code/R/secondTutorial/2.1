@@ -1,0 +1,59 @@
+getwd();
+workingDir = "C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/Code/R/secondTutorial";
+setwd(workingDir);
+library(WGCNA);
+options(stringsAsFactors = FALSE);
+
+no.obs = 50;
+
+ESturquoise = 0;
+ESbrown = -.6;
+ESgreen = .6;
+ESyellow = 0;
+
+ESvector = c(ESturquoise,ESbrown,ESgreen,ESyellow);
+
+nGenes1 = 3000
+
+simulateProportions1 = c(0.2,0.15,0.08,0.06,0.04)
+
+set.seed(1)
+
+MEgreen = rnorm(no.obs)
+scaledy = MEgreen * ESgreen + sqrt(1-ESgreen^2) * rnorm(no.obs)
+y = ifelse(scaledy > median(scaledy),2,1)
+MEturquoise = ESturquoise * scaledy + sqrt(1-ESturquoise^2)*rnorm(no.obs)
+
+MEblue = .6 * MEturquoise + sqrt(1-.6^2) * rnorm(no.obs)
+MEbrown = ESbrown * scaledy + sqrt(1-ESbrown ^ 2) * rnorm(no.obs)
+MEyellow = ESyellow * scaledy + sqrt(1-ESyellow^2) * rnorm(no.obs)
+ModuleEigengeneNetwork1 = data.frame(y,MEturquoise,MEblue,MEbrown,MEgreen,MEyellow)
+
+signif(cor(ModuleEigengeneNetwork1,use = "p"),2)
+
+dat1 = simulateDatExpr5Modules(MEturquoise = ModuleEigengeneNetwork1$MEturquoise,
+					MEblue = ModuleEigengeneNetwork1$MEblue,
+		MEbrown = ModuleEigengeneNetwork1$MEbrown,
+		MEgreen = ModuleEigengeneNetwork1$MEgreen,
+		MEyellow = ModuleEigengeneNetwork1$MEyellow,
+		nGenes = nGenes1,simulateProportions = simulateProportions1)
+
+names(dat1)
+datExpr = dat1$datExpr;
+truemodule = dat1$truemodule;
+datME = dat1$datME;
+attach(ModuleEigengeneNetwork1)
+
+table(truemodule)
+dim(datExpr)
+
+datExpr = data.frame(datExpr)
+ArrayName = paste("Sample",1:dim(datExpr)[[1]], sep="" )
+
+GeneName = paste("Gene",1:dim(datExpr)[[2]],sep="")
+dimnames(datExpr)[[1]] = ArrayName
+dimnames(datExpr)[[2]] = GeneName
+
+rm(dat1); collectGarbage();
+
+save.image("Simulated-dataSimulation.RData");

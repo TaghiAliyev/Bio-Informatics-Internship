@@ -11,8 +11,6 @@ ADJ1 = abs(cor(datExpr,use="p"))^6
 
 k = as.vector(apply(ADJ1,2,sum,na.rm=T))
 
-k = softConnectivity(datE = datExpr, power = 6)
-
 sizeGrWindow(10,5)
 par(mfrow = c(1,2))
 hist(k)

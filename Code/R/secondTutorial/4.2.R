@@ -5,7 +5,6 @@ library(WGCNA);
 options(stringsAsFactors = FALSE);
 
 load("Simulated-dataSimulation.RData");
-attach(ModuleEigengeneNetwork1)
 
 GS1 = as.numeric(cor(y,datExpr,use = "p"))
 

@@ -8,7 +8,7 @@ datGeneSummary = read.csv("GeneSummaryTutorial.csv")
 datTraits = read.csv("TraitsTutorial.csv")
 datMicroarrays = read.csv("MicroarrayDataTutorial.csv")
 
-datMicroarrays[0:5,0:5]
+datMicroarrays[1:5,1:4]
 
 ArrayName = names(data.frame(datMicroarrays[,-1]))
 

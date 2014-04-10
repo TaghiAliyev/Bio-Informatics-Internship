@@ -5,7 +5,6 @@ library(WGCNA);
 options(stringsAsFactors = FALSE);
 
 load("Simulated-dataSimulation.RData");
-attach(ModuleEigengeneNetwork1)
 
 meanExpressionByArray = apply(datExpr,1,mean,na.rm = T)
 NumberMissingByArray = apply(is.na(data.frame(datExpr)),1,sum)

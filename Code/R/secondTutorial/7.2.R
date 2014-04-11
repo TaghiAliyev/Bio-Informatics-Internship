@@ -91,3 +91,41 @@ if (WGCNApropNoise>StandardpropNoise) print("standard screening wins")
 }
 
 rm(dissTOM); collectGarbage();
+
+CorPrediction1 = data.frame(GS1,NS1$cor.Weighted)
+cor.Weighted = NS1$cor.Weighted
+
+sizeGrWindow(8,6)
+verboseScatterplot(cor.Weighted,GS1, main = "Network-based weighted correlation versus Pearson correlation\n",
+			col = truemodule, cex.main = 1.2)
+abline(0,1)
+
+
+
+set.seed(2)
+nSamples2 = 2000
+MEgreen = rnorm(nSamples2)
+scaledy2 = MEgreen * ESgreen + sqrt(1-ESgreen^2)*rnorm(nSamples2)
+y2 = ifelse(scaledy2 > median(scaledy2),2,1)
+MEturquoise = ESturquoise * scaledy2 + sqrt(1-ESturquoise^2)*rnorm(nSamples2)
+MEblue = .6 * MEturquoise + sqrt(1-.6^2) * rnorm(nSamples2)
+MEbrown = ESbrown * scaledy2 + sqrt(1-ESbrown^2)*rnorm(nSamples2)
+MEyellow = ESyellow * scaledy2 + sqrt(1-ESyellow^2)*rnorm(nSamples2)
+
+ModuleEigengeneNetwork2 = data.frame(y=y2,MEturquoise,MEblue,MEbrown,MEgreen,MEyellow)
+
+dat2 = simulateDatExpr5Modules(MEturquoise = ModuleEigengeneNetwork2$MEturquoise,MEblue = ModuleEigengeneNetwork2$MEblue,
+				MEbrown = ModuleEigengeneNetwork2$MEbrown,MEyellow = ModuleEigengeneNetwork2$MEyellow,
+				MEgreen = ModuleEigengeneNetwork2$MEgreen, simulateProportions = simulateProportions1,
+				nGenes = nGenes1)
+
+GS1 = as.numeric(cor(y,datExpr,use = "p"))
+
+GS2 = as.numeric(cor(ModuleEigengeneNetwork2$y, dat2$datExpr,use = "p"))
+
+sizeGrWindow(8,6)
+par(mfrow = c(1,1))
+verboseScatterplot(GS1,GS2,
+		main = "Trait-based gene significance in test set vs. training set\n",
+		xlab = "Training set gene significance", ylab = "Test set gene significance",
+		col = truemodule, cex.main = 1.4)

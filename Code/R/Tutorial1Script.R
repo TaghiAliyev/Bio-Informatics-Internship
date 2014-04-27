@@ -17,6 +17,8 @@ names(datExpr0) = femData$substanceBXH;
 #same idea of reading data.
 rownames(datExpr0) = names(femData)[-c(1:8)];
 
+datExpr0[1:5,1:5];
+
 gsg = goodSamplesGenes(datExpr0,verbose = 3);
 gsg$allOK
 

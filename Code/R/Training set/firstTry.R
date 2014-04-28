@@ -94,7 +94,7 @@ blockWiseNetwork = blockwiseModules(datExprToFile, maxBlockSize = 2000, power = 
 	verbose = 3)
 
 
-dissimME = (1-t(cor(restrictedDatExpr,method = "p")))/2
+dissimME = (1-t(cor(datExprToFile,method = "p")))/2
 hclustdat = hclust(as.dist(dissimME), method = "average")
 
 par(mfrow = c(1,1))

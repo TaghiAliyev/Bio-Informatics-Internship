@@ -7,7 +7,7 @@ enableWGCNAThreads()
 options(stringsAsFactors = FALSE);
 
 bigSet = read.csv("mRNA_norm_combined.csv");
-bigSet = as.data.frame(t(bigSet[,-c(1)]));
+write.table(bigSet,"bigSetReady.txt", sep = " ");
 
 library(survival)
 args(coxph)
@@ -35,3 +35,29 @@ plot(sft$fitIndices[,1], sft$fitIndices[,5],
 xlab="Soft Threshold (power)",ylab="Mean Connectivity", type="n",
 main = paste("Mean connectivity"))
 text(sft$fitIndices[,1], sft$fitIndices[,5], labels=powers, cex=cex1,col="red")
+
+oneStepNetwork = blockwiseModules(bigSet, power = 8, TOMType = "unsigned", minModuleSize = 30, reassignThreshold = 0, mergeCutHeight = 0.25,
+		numericLabels = TRUE, saveTOMs = TRUE, saveTOMFileBase = "oneStepTOM", verbose = 3)
+network = blockwiseModules(bigSet, maxBlockSize = 2500, power = 8, TOMType = "unsigned",
+		minModuleSize = 30, reassignThreshold = 0, mergeCutHeight = 0.25,
+		numericLabels = TRUE, saveTOMs = TRUE, saveTOMFileBase = "bigSetTom", verbose = 3)
+
+colors = network$colors
+moduleColors = labels2colors(colors)
+table(colors)
+
+blockToDraw = 10;
+
+plotDendroAndColors(network$dendrograms[[blockToDraw]], moduleColors[network$blockGenes[[blockToDraw]]], "Module Colors", main = "Gene dendrogram and module colors in block 1",
+		dendroLabels = FALSE, hang = 0.03, addGuide = TRUE, guideHang = 0.05)
+
+smallSample = bigSet[,1:12000]
+smaller = bigSet[,1:10]
+
+j = softConnectivity(datE = smallSample, power = 8)
+
+ADJ1=abs(cor(smaller,use="p"))
+sizeGrWindow(10,5)
+par(mfrow=c(1,2))
+hist(j)
+scaleFreePlot(j, main="Check scale free topology\n")

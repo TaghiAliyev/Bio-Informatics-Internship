@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.1.9)  29 APR 2014 16:00
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.1.9)  29 APR 2014 16:10
 entering extended mode
 **Thesis.tex
 
@@ -227,7 +227,19 @@ LaTeX Font Info:    ... okay on input line 21.
 )
 english
 
-LaTeX Warning: Empty `thebibliography' environment on input line 69.
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
+[]\OT1/cmr/m/n/10 Lingxue Zhang, Sey-oung Kim, "Learn-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
+\OT1/cmr/m/n/10 ing Gene Net-works un-der SNP Per-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
+\OT1/cmr/m/n/10 tur-ba-tions Us-ing eQTL Datasets"
+ []
 
 [1{C:/Users/Taghi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
@@ -236,23 +248,29 @@ LaTeX Warning: Empty `thebibliography' environment on input line 69.
 
 ]
 (C:\Users\Taghi\eclipseWorkspace\School\Project\Bio-Informatics-Internship\Thes
-is\Thesis.aux) ) 
+is\Thesis.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2767 strings out of 493921
- 34302 string characters out of 3147283
- 99383 words of memory out of 3000000
- 6051 multiletter control sequences out of 15000+200000
- 9626 words of font info for 35 fonts, out of 3000000 for 9000
+ 2771 strings out of 493921
+ 34335 string characters out of 3147283
+ 100391 words of memory out of 3000000
+ 6054 multiletter control sequences out of 15000+200000
+ 9972 words of font info for 36 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  31i,8n,45p,271b,211s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
-x12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-Output written on Thesis.pdf (1 page, 63355 bytes).
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmti10.pfb>
+Output written on Thesis.pdf (1 page, 94903 bytes).
 PDF statistics:
- 26 PDF objects out of 1000 (max. 8388607)
+ 34 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

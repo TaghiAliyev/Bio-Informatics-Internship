@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.1.9)  30 APR 2014 13:12
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.1.9)  30 APR 2014 13:59
 entering extended mode
 **Thesis.tex
 
@@ -227,17 +227,17 @@ LaTeX Font Info:    ... okay on input line 21.
 )
 english
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
 []\OT1/cmr/m/n/10 Lingxue Zhang, Sey-oung Kim, "Learn-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
 \OT1/cmr/m/n/10 ing Gene Net-works un-der SNP Per-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
 \OT1/cmr/m/n/10 tur-ba-tions Us-ing eQTL Datasets"
  []
 
@@ -255,7 +255,7 @@ Here is how much of TeX's memory you used:
  6056 multiletter control sequences out of 15000+200000
  9972 words of font info for 36 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 31i,8n,45p,280b,211s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 31i,8n,45p,541b,211s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
 x12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><
 C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Progra
@@ -263,7 +263,7 @@ m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmti10.pfb>
-Output written on Thesis.pdf (1 page, 104831 bytes).
+Output written on Thesis.pdf (1 page, 105967 bytes).
 PDF statistics:
  34 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -58,11 +58,12 @@ As already mentioned, in order to reconstruct the network architecture, one has 
 
 
 \subsection{Module Detection}
-Modules represent set of genes that are highly correlated and have similar connection strength and correlation with all the other genes. Method to compute modules uses Topological Overlap Mapping as its similarity measure. Topological overlap between genes i and j is following:\\
+Modules represent set of genes that are highly correlated and have similar connection strength and correlation with all the other genes. Method to compute modules uses Topological Overlap-based Dissimilarity Mapping as its dissimilarity measure and hierarchical clustering. First, we denote Topological overlap between genes i and j as being following:\\
 \begin{equation}
 \omega _{ij} = \dfrac{l _{ij} + a_{ij}}{min(k_i,k_j) + l - a_{ij}}
 \end{equation}
-Where, $l_{ij} = \sum_{u \neq {i,j}} a_{i,u} a_{u,j}$ represents the amount of genes that both i and j are connected. The topological overlap matrix (TOM) is then generated as being $\Omega = \lbrack \omega _{ij} \rbrack$. $\omega _{ij}$ is a number between 0 and 1 and is symmetric, meaning $\omega _{ij} = \omega _{ji}$
+Where, $l_{ij} = \sum_{u \neq {i,j}} a_{i,u} a_{u,j}$ represents the amount of genes that both i and j are connected. The topological overlap matrix (TOM) is then generated as being $\Omega = \lbrack \omega _{ij} \rbrack$. $\omega _{ij}$ is a number between 0 and 1 and is symmetric, meaning $\omega _{ij} = \omega _{ji}$. As, module detection methods use dissimilarity measure for their computations, we define Topological Overlap-based Dissimilarity Measure as follows: $d _{ij} ^{\omega} = 1 - \omega _{ij}$.
+
 \subsection{Transcription Factor Analysis}
 
 \subsection{Gene Ontology Enrichment Analysis}
@@ -70,7 +71,7 @@ Using BiNGO plugin on Cytoscape software.
 
 
 \section{Survival Analysis}
-Survival analysis examines and models the time it takes for events to occur and it typically examines the relationship of the survival distribution to covariates \cite{cox}. One application of survival analysis that will be focused on is Cox Model.
+Survival analysis examines and models the time it takes for events to occur and it typically examines the relationship of the survival distribution to covariates \cite{cox}. One application of survival analysis that will be focused on is Cox Model and Network-Cox model which was proposed by Zhang \cite{netcox}.
 \subsection{Cox Model}
 Cox model, also known as Cox proportional hazards model, is an example to survival models that are used in survival analysis of patient data. 
 \subsection{Network-Cox model}
@@ -79,11 +80,14 @@ Cox model, also known as Cox proportional hazards model, is an example to surviv
 This section describes regression models used for further analysis of mRNA data of patients. Regression models were used in order to compute how essential are given set of attributes (i.e., if patient is smoking or not, blood pressure level, level of diabetes etc.). One obvious problem with given data set was dimensionality of the dataset (524 patients and 20842 genes), which naturally leads to overfitting problem. In statistics, overfitting refers to the cases where number of parameters(in this case, genes) is relatively bigger than number of observations(in this case, patients). One way of dealing with this problem is to reduce size of the data by selecting only those parameters that together can explain or represent the data and continue analysis only on that set of parameters.
 \subsection{Bootstrapping and ensemble feature selection}
 \subsection{Logistic regression}
-Logistic regression is a type of probabilistic statistical classification model
+Logistic regression is a type of probabilistic statistical classification model.
 
 
 \section{Experiments}
 \subsection{Setup of experiments}
+\subsection{Module detection}
+\dkepic{Dendrogram}{Dendrogram representing result of module detection using clustering methods}
+As it can be seen from figure 5.1, 13 modules were found using R WGCNA Package.
 \subsection{Results}
 
 \section{Conclusion}

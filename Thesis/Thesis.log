@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.1.9)  30 APR 2014 13:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.1.9)  13 MAY 2014 14:58
 entering extended mode
 **Thesis.tex
 
@@ -226,46 +226,88 @@ LaTeX Font Info:    ... okay on input line 21.
 \everyMPtoPDFconversion=\toks23
 )
 english
+<power.png, id=1, 575.14874pt x 323.70938pt>
+File: power.png Graphic file (type png)
+ <use power.png>
+Package pdftex.def Info: power.png used on input line 56.
+(pdftex.def)             Requested size: 252.94499pt x 142.3634pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
-[]\OT1/cmr/m/n/10 Lingxue Zhang, Sey-oung Kim, "Learn-
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 56--56
+[][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
-\OT1/cmr/m/n/10 ing Gene Net-works un-der SNP Per-
+Underfull \hbox (badness 1092) in paragraph at lines 61--62
+\OT1/cmr/m/n/10 uses Topo-log-i-cal Over-lap Map-ping as its sim-i-lar-ity
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
-\OT1/cmr/m/n/10 tur-ba-tions Us-ing eQTL Datasets"
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
  []
 
 [1{C:/Users/Taghi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 
-]
+ <C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/The
+sis/power.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+[]\OT1/cmr/m/n/10 Lingxue Zhang, Sey-oung Kim, "Learn-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+\OT1/cmr/m/n/10 ing Gene Net-works un-der SNP Per-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+\OT1/cmr/m/n/10 tur-ba-tions Us-ing eQTL Datasets"
+ []
+
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+
+Underfull \hbox (badness 1320) in paragraph at lines 109--110
+[]\OT1/cmr/m/n/10 Jia Xue \OT1/cmr/m/it/10 et al.\OT1/cmr/m/n/10 , "Transcripto
+me-Based Net-work
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 17.90558pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2]
 (C:\Users\Taghi\eclipseWorkspace\School\Project\Bio-Informatics-Internship\Thes
 is\Thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 2773 strings out of 493921
- 34346 string characters out of 3147283
- 101399 words of memory out of 3000000
- 6056 multiletter control sequences out of 15000+200000
- 9972 words of font info for 36 fonts, out of 3000000 for 9000
+ 2793 strings out of 493921
+ 34550 string characters out of 3147283
+ 103439 words of memory out of 3000000
+ 6073 multiletter control sequences out of 15000+200000
+ 10507 words of font info for 38 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 31i,8n,45p,541b,211s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 31i,11n,45p,805b,244s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
-x12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmti10.pfb>
-Output written on Thesis.pdf (1 page, 105967 bytes).
+x10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on Thesis.pdf (2 pages, 200101 bytes).
 PDF statistics:
- 34 PDF objects out of 1000 (max. 8388607)
+ 68 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

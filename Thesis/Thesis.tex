@@ -20,38 +20,64 @@
 
 \begin{document}
 
+% Title and the author of the page goes here ..... 
 \title{Analysis of mRNA data of patients with atherosclerosis\footnote{This thesis was prepared in partial fulfillment of the requirements
  for the Degree of Bachelor of Science in Knowledge Engineering,
 University of Maastricht,  supervisors: Prof. Dr. Ir. Eric Biessens, Dr. Jo\"{e}l Karel, Dr. Evgueni Smirnov, Dr. Marco Manca and Dr. Zita Soons}}
 \author{Taghi Aliyev \\}
 \maketitle
 
+% Just for making sure first page has number as well.
+\makeatletter
+\let\ps@oldempty\ps@empty % save default definition of \ps@empty
+\renewcommand\ps@empty\ps@plain
+\makeatother
 
+\pagenumbering{arabic}
 %---------------------------------------------------------------------------
 
 \begin{abstract}
 
-
+\smallskip
+\noindent \textbf{Keywords: } Weighted Gene Correlation Network Analysis, Regression, mRNA, Atherosclerosis
 \end{abstract}
 
 %---------------------------------------------------------------------------
 
 % Sections go here
 \section{Introduction}
-
+Atherosclerosis is a heart disease in which an artery wall thickens as a result of accumulation of calcium and fatty materials such as cholesterol and triglyceride. Arteries are blood vessels that carry oxygen-rich blood to your heart and other parts of the body. 
 \section{Weighted Gene Co-Expression Network Analysis}
-Weighted gene co-expression network analysis is a systems biology method for describing the correlation patterns among genes across microarray samples. Weighted correlation network analysis (WGCNA) can be used for finding clusters (modules) of highly correlated genes, for summarizing such clusters using the module eigengene or an intramodular hub gene, for relating modules to one another and to external sample traits (using eigengene network methodology), and for calculating module membership measures \cite{wgcna}.
-\subsection{Selection of power}
-\subsection{Module Detection}
+Weighted gene co-expression network analysis(WGCNA) is a systems biology method for describing the correlation patterns among genes across microarray samples. WGCNA is a reverse engineering method for reconstruction of gene correlation network from expression profiles of genes in given patient data. It can be used for finding clusters (modules) of highly correlated genes, for summarizing such clusters using the module eigengene or an intramodular hub gene, for relating modules to one another and to external sample traits (using eigengene network methodology), and for calculating module membership measures \cite{wgcna}.
+\subsection{Network construction}
+Construction of WGCNA is essential in detection of modules and analysis of interconnectivity among the genes represented in patient data. In these networks, nodes are the genes and strength of connection depends on the pairwise connection of expression profiles of genes.
+\subsection{Selection of soft-thresholding power}
+As already mentioned, in order to reconstruct the network architecture, one has to select the soft-threshold power, $\beta$, that is used in computation of the network values\cite{wgcna3}.
+\dkepic{power}{Soft-thresholding power selection}
 \subsection{Interconnectivity analysis}
+
+
+\subsection{Module Detection}
+Modules represent set of genes that are highly correlated and have similar connection strength and correlation with all the other genes. Method to compute modules uses Topological Overlap Mapping as its similarity measure. Topological overlap between genes i and j is following:\\
+\begin{equation}
+\omega _{ij} = \dfrac{l _{ij} + a_{ij}}{min(k_i,k_j) + l - a_{ij}}
+\end{equation}
+Where, $l_{ij} = \sum_{u \neq {i,j}} a_{i,u} a_{u,j}$ represents the amount of genes that both i and j are connected. The topological overlap matrix (TOM) is then generated as being $\Omega = \lbrack \omega _{ij} \rbrack$. $\omega _{ij}$ is a number between 0 and 1 and is symmetric, meaning $\omega _{ij} = \omega _{ji}$
+\subsection{Transcription Factor Analysis}
+
+\subsection{Gene Ontology Enrichment Analysis}
+Using BiNGO plugin on Cytoscape software.
+
 
 \section{Survival Analysis}
 Survival analysis examines and models the time it takes for events to occur and it typically examines the relationship of the survival distribution to covariates \cite{cox}. One application of survival analysis that will be focused on is Cox Model.
 \subsection{Cox Model}
 Cox model, also known as Cox proportional hazards model, is an example to survival models that are used in survival analysis of patient data. 
+\subsection{Network-Cox model}
 
 \section{Regression}
-This section describes regression models used for further analysis of mRNA data of patients. Regression models were used in order to compute how essential are given set of attributes (i.e., if patient is smoking or not, blood pressure level, level of diabetes etc.).
+This section describes regression models used for further analysis of mRNA data of patients. Regression models were used in order to compute how essential are given set of attributes (i.e., if patient is smoking or not, blood pressure level, level of diabetes etc.). One obvious problem with given data set was dimensionality of the dataset (524 patients and 20842 genes), which naturally leads to overfitting problem. In statistics, overfitting refers to the cases where number of parameters(in this case, genes) is relatively bigger than number of observations(in this case, patients). One way of dealing with this problem is to reduce size of the data by selecting only those parameters that together can explain or represent the data and continue analysis only on that set of parameters.
+\subsection{Bootstrapping and ensemble feature selection}
 \subsection{Logistic regression}
 Logistic regression is a type of probabilistic statistical classification model
 
@@ -72,9 +98,15 @@ Logistic regression is a type of probabilistic statistical classification model
 \begin{thebibliography}{99}
 \bibitem{ref2} Lingxue Zhang, Seyoung Kim, "Learning Gene Networks under SNP Perturbations Using eQTL Datasets" \emph{http://dx.doi.org/10.1371\%2Fjournal.pcbi.1003420}
 \bibitem{wgcna} Langfelder P, Horvath S , "WGCNA: an R package for weighted correlation network analysis". \emph{BMC Bioinformatics 2008, 9:559}
+\bibitem{wgcna3} Bin Zhang, Steve Horvath, " A general framework for Weighted Gene Co-Expression Network Analysis". \emph{Statistical Applications in Genetics and Molecular Biology. Volume 4, Issue 1, ISSN (Online) 1544-6115}
 \bibitem{fdr} Storey JD and Tibshirani R. , "Statistical significance for genome-wide experiments".\emph{ Proceedings of the National Academy of Sciences", 100: 9440-9445.}
 \bibitem{cox} John Fox, "Cox Proportional-Hazards Regression for Survival Data", \emph{Appendix to An R and S-PLUS Companion to Applied Regression}
-
+\bibitem{regres} Brian S. Everitt and Torsten Hothorn, "CHAPTER 6: Logistic Regression and Generalised Linear Models: Blood Screening, Women’s Role in Society, and Colonic Polyps",\emph{"A Handbook of Statistical Analyses Using R"}
+\bibitem{regres2} William B. King, Coastal Carolina University, "Logistic Regression", \emph{R Tutorials} 
+\bibitem{netcox} Wei Zhang, Takayo Ota, Viji Shridhar, Jeremy R Chien, Baolin Wu, Rui Kuang, "Network-based Survival Analysis Reveals Subnetwork Signatures for Predicting Outcomes of Ovarian Cancer Treatment", \emph{PLoS Comput Biol 9(3):e1002975,2013}
+\bibitem{bootstrap} Abeel T, Helleputte T, Van de Peer Y, Dupont P, Saeys Y, "Robust biomarker identification for cancer diagnosis with ensemble feature selection methods", \emph{PubMed ID: 19942583}
+\bibitem{cox2} S. Horvath \emph{et al.}, "Analysis of oncogenic signaling networks in glioblastoma identifies ASPM as a molecular target", \emph{Proc Natl Acad Sci USA 103, 17402-17407 (2006)}
+\bibitem{wgcna2} Jia Xue \emph{et al.}, "Transcriptome-Based Network Analysis Reveals a Spectrum Model of Human Macrophage Activation", \emph{Immunity, Volume 40, Issue 2, 274-288}
 \end{thebibliography}
 
 \appendix

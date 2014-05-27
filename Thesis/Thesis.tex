@@ -46,45 +46,61 @@ University of Maastricht,  supervisors: Prof. Dr. Ir. Eric Biessens, Dr. Jo\"{e}
 
 % Sections go here
 \section{Introduction}
-Atherosclerosis is a heart disease in which an artery wall thickens as a result of accumulation of calcium and fatty materials such as cholesterol and triglyceride. Arteries are blood vessels that carry oxygen-rich blood to your heart and other parts of the body. 
-\section{Weighted Gene Co-Expression Network Analysis}
-Weighted gene co-expression network analysis(WGCNA) is a systems biology method for describing the correlation patterns among genes across microarray samples. WGCNA is a reverse engineering method for reconstruction of gene correlation network from expression profiles of genes in given patient data. It can be used for finding clusters (modules) of highly correlated genes, for summarizing such clusters using the module eigengene or an intramodular hub gene, for relating modules to one another and to external sample traits (using eigengene network methodology), and for calculating module membership measures \cite{wgcna}.
+Atherosclerosis is a heart disease in which an artery wall thickens as a result of accumulation of calcium and fatty materials such as cholesterol and triglyceride. Arteries are blood vessels that carry oxygen-rich blood to your heart and other parts of the body. Recent research concerning atherosclerosis focused on finding new target genes that will lead to better understanding of the disease and generation of new treatments. Although, most of the research done so far focused on systems biology methods \cite{systems}, standard mapping techniques, random forests, neural networks and some others, lately, also some papers have been published trying to analyse patient data using more complex and statistical methods. Considering successful usage of Weighted Gene Co-expression Network Analysis, Cox regression models in identification of target genes in cancer research\cite{wgcna2,cox2,netcox} lead to the idea of performing experiments and analysis using these techniques in research of cardiovascular diseases.\\ \\
+\section{Patient data}
+Patient data that is used for this study is collected by CTMM and represents mRNA and clinical data of 514 patients. There are 20826 genes in gene data set and each gene is represented with its expression profile over all patients. Clinical data about patients represented time for the event which was used as a variable to predict in case of Cox and Net-Cox regression and also included personal data of patients. Main focus was on gene data set rather than classical approach of using personal patient data as predictors of the cardiovascular event.
+
+\section{Weighted Gene Co-Expression Network}
+Gene co-expression networks represent the interaction between the nodes and helps to investigate the functionality of genes on system-level. Construction of such a networks is straightforward: Nodes represent the genes and nodes are connected if genes are significantly correlated. This already presents one challenge of picking correct threshold that will define the significance of the connection. One approach proposed by Steve Horvath and his team was the idea of giving weight to the connection between each pair \cite{wgcna3}. They achieved this by creating a general framework for "soft" thresholding that gave the weights to pair of genes in weighted network. Parts of network construction and approaches proposed by S. Horvath are explained in next subsections.
+
 \subsection{Network construction}
-Construction of WGCNA is essential in detection of modules and analysis of interconnectivity among the genes represented in patient data. In these networks, nodes are the genes and strength of connection depends on the pairwise connection of expression profiles of genes.
+
+Weighted gene co-expression networks are reverse engineering methods for finding the connection and correlation between the genes using genes` expression profiles. Each co-expression network corresponds to an adjacency matrix, which in its own term encodes the correlation between each pair of genes. Their construction is essential in detection of modules and analysis of interconnectivity among the genes represented in patient data. General flowchart for constructing a gene co-expression network is represented in Figure 2.1.\\ \\
+
+\dkepic{FlowChart}{Flowchart showing the steps in network construction}
+
+As it is pointed out in Figure 2.1, first couple of steps relate to deciding on the measure and the function that will be used to assign weight of correlation between each pair of genes in the network. Once the similarity measure and adjacency function is decided upon, next step is to find the best fitting parameters. \\
+It has been shown that in many real networks, as well as random networks, probability that a node is connected with k other nodes decays as a power law $ p(k) \sim k ^{-\gamma}$ and this statement is the defining property of scale-free networks and topology. It is known that scale-free networks are very heterogeneous and are dominated by a few hub genes that have high connectivity value. \\
+
+Details of module detection and interconnectivity of genes will be explained in later sections.
+
+
 \subsection{Selection of soft-thresholding power}
 As already mentioned, in order to reconstruct the network architecture, one has to select the soft-threshold power, $\beta$, that is used in computation of the network values\cite{wgcna3}.
-\dkepic{power}{Soft-thresholding power selection}
-\subsection{Interconnectivity analysis}
+\dkepic{R2}{Scale-free topology fit plot}
 
+\dkepic{power}{Soft-thresholding power selection}
 
 \subsection{Module Detection}
 Modules represent set of genes that are highly correlated and have similar connection strength and correlation with all the other genes. Method to compute modules uses Topological Overlap-based Dissimilarity Mapping as its dissimilarity measure and hierarchical clustering. First, we denote Topological overlap between genes i and j as being following:\\
 \begin{equation}
 \omega _{ij} = \dfrac{l _{ij} + a_{ij}}{min(k_i,k_j) + l - a_{ij}}
 \end{equation}
-Where, $l_{ij} = \sum_{u \neq {i,j}} a_{i,u} a_{u,j}$ represents the amount of genes that both i and j are connected. The topological overlap matrix (TOM) is then generated as being $\Omega = \lbrack \omega _{ij} \rbrack$. $\omega _{ij}$ is a number between 0 and 1 and is symmetric, meaning $\omega _{ij} = \omega _{ji}$. As, module detection methods use dissimilarity measure for their computations, we define Topological Overlap-based Dissimilarity Measure as follows: $d _{ij} ^{\omega} = 1 - \omega _{ij}$.
+Where, $l_{ij} = \sum_{u \neq {i,j}} a_{i,u} a_{u,j}$ represents the amount of genes that both i and j are connected. The topological overlap matrix (TOM) is then generated as being $\Omega = \lbrack \omega _{ij} \rbrack$. $\omega _{ij}$ is a number between 0 and 1 and is symmetric, meaning $\omega _{ij} = \omega _{ji}$. As module detection methods use dissimilarity measure for their computations, we define Topological Overlap-based Dissimilarity Measure as follows: $d _{ij} ^{\omega} = 1 - \omega _{ij}$.
 
-\subsection{Transcription Factor Analysis}
 
-\subsection{Gene Ontology Enrichment Analysis}
-Using BiNGO plugin on Cytoscape software.
+\subsection{Interconnectivity of genes}
 
+Survival analysis examines and models the time it takes for events to occur and it typically examines the relationship of the survival distribution to covariates \cite{cox}. One application of survival analysis that will be focused on is Cox Model and Network-Cox model which was proposed by Zhang \cite{netcox}.
 
 \section{Survival Analysis}
-Survival analysis examines and models the time it takes for events to occur and it typically examines the relationship of the survival distribution to covariates \cite{cox}. One application of survival analysis that will be focused on is Cox Model and Network-Cox model which was proposed by Zhang \cite{netcox}.
 \subsection{Cox Model}
 Cox model, also known as Cox proportional hazards model, is an example to survival models that are used in survival analysis of patient data. 
-\subsection{Network-Cox model}
 
-\section{Regression}
-This section describes regression models used for further analysis of mRNA data of patients. Regression models were used in order to compute how essential are given set of attributes (i.e., if patient is smoking or not, blood pressure level, level of diabetes etc.). One obvious problem with given data set was dimensionality of the dataset (524 patients and 20842 genes), which naturally leads to overfitting problem. In statistics, overfitting refers to the cases where number of parameters(in this case, genes) is relatively bigger than number of observations(in this case, patients). One way of dealing with this problem is to reduce size of the data by selecting only those parameters that together can explain or represent the data and continue analysis only on that set of parameters.
 \subsection{Bootstrapping and ensemble feature selection}
-\subsection{Logistic regression}
-Logistic regression is a type of probabilistic statistical classification model.
+Write about fighting overfitting and big number of genes
+\subsection{Network-Cox model}
 
 
 \section{Experiments}
 \subsection{Setup of experiments}
+\subsection{Gene Ontology Enrichment Analysis}
+In order to perform Gene Ontology Enrichment Analysis (GOEA) on the gene data set, results of module detection method were used. Each module was analysed separately. In order to perform GOEA, BiNGO plugin on Cytoscape(version 3.1) software was used. Main idea was to get the feeling about modules and processes represented by these modules.
+
+\subsection{Transcription Factor Analysis}
+ToppFun. CTMM data
+\subsection{MicroRNA Analysis}
+ToppFun. CTMM data
 \subsection{Module detection}
 \dkepic{Dendrogram}{Dendrogram representing result of module detection using clustering methods}
 As it can be seen from figure 5.1, 13 modules were found using R WGCNA Package.
@@ -111,6 +127,8 @@ As it can be seen from figure 5.1, 13 modules were found using R WGCNA Package.
 \bibitem{bootstrap} Abeel T, Helleputte T, Van de Peer Y, Dupont P, Saeys Y, "Robust biomarker identification for cancer diagnosis with ensemble feature selection methods", \emph{PubMed ID: 19942583}
 \bibitem{cox2} S. Horvath \emph{et al.}, "Analysis of oncogenic signaling networks in glioblastoma identifies ASPM as a molecular target", \emph{Proc Natl Acad Sci USA 103, 17402-17407 (2006)}
 \bibitem{wgcna2} Jia Xue \emph{et al.}, "Transcriptome-Based Network Analysis Reveals a Spectrum Model of Human Macrophage Activation", \emph{Immunity, Volume 40, Issue 2, 274-288}
+\bibitem{systems} Stephen A Ramsey, Elizabeth S. Gold, "A systems biology approach to understanding atherosclerosis", \emph{EMBO Mol Med. 2010 March, 2(3) : 79-89}
+\bibitem{barabas1999} Albert, R. and Barabasi, A. L., "Emergence of scaling in random networks science", \emph{Science, 286(5439), 509-512}
 \end{thebibliography}
 
 \appendix

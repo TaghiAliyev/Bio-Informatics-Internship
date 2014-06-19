@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.1.9)  26 MAY 2014 20:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.1.9)  19 JUN 2014 23:21
 entering extended mode
 **Thesis.tex
 
@@ -196,75 +196,92 @@ LaTeX Info: Redefining \em on input line 420.
 LaTeX Info: The control sequence `\[' is already robust on input line 471.
 LaTeX Info: The control sequence `\]' is already robust on input line 472.
 )
+(C:\Users\Taghi\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithm2e\algorithm2e.st
+y
+Package: algorithm2e 2013/01/06 v5.00 algorithms environments
+\c@AlgoLine=\count102
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\xspace.sty"
+Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\ltxmisc\relsize.sty"
+Package: relsize 2003/07/04 ver 3.1
+)
+********************************************************
+Package `algorithm2e' Release 5.0 -- january 06 2013 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (cfiorio@um2.fr)
+********************************************************
+\skiptotal=\skip56
+\skiplinenumber=\skip57
+\skiprule=\skip58
+\skiphlne=\skip59
+\skiptext=\skip60
+\skiplength=\skip61
+\algomargin=\skip62
+\skipalgocfslide=\skip63
+\algowidth=\dimen115
+\inoutsize=\dimen116
+\inoutindent=\dimen117
+\interspacetitleruled=\dimen118
+\interspacealgoruled=\dimen119
+\interspacetitleboxruled=\dimen120
+\algocf@inoutbox=\box30
+\algocf@inputbox=\box31
+\AlCapSkip=\skip64
+\AlCapHSkip=\skip65
+\algoskipindent=\skip66
+\algocf@nlbox=\box32
+\algocf@hangingbox=\box33
+\algocf@untilbox=\box34
+\algocf@skipuntil=\skip67
+\algocf@capbox=\box35
+\algoheightruledefault=\skip68
+\algoheightrule=\skip69
+\algotitleheightruledefault=\skip70
+\algotitleheightrule=\skip71
+\c@algocfline=\count103
+\c@algocfproc=\count104
+\c@algocf=\count105
+\algocf@algoframe=\box36
+\algocf@algobox=\box37
+)
 (C:\Users\Taghi\eclipseWorkspace\School\Project\Bio-Informatics-Internship\Thes
 is\Thesis.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
 
 (C:\Users\Taghi\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count102
-\scratchdimen=\dimen115
-\scratchbox=\box30
-\nofMPsegments=\count103
-\nofMParguments=\count104
+\scratchcounter=\count106
+\scratchdimen=\dimen121
+\scratchbox=\box38
+\nofMPsegments=\count107
+\nofMParguments=\count108
 \everyMPshowfont=\toks22
-\MPscratchCnt=\count105
-\MPscratchDim=\dimen116
-\MPnumerator=\count106
-\makeMPintoPDFobject=\count107
+\MPscratchCnt=\count109
+\MPscratchDim=\dimen122
+\MPnumerator=\count110
+\makeMPintoPDFobject=\count111
 \everyMPtoPDFconversion=\toks23
 )
 english
 
-Underfull \hbox (badness 1043) in paragraph at lines 49--50
-\OT1/cmr/m/n/10 ex-per-i-ments and anal-y-sis us-ing these tech-niques in
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
-
- []
-
-
-Underfull \hbox (badness 3460) in paragraph at lines 58--59
-\OT1/cmr/m/n/10 Weighted gene co-expression net-works are re-verse
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
-
- []
-
-<FlowChart.png, id=1, 223.83624pt x 437.635pt>
-File: FlowChart.png Graphic file (type png)
- <use FlowChart.png>
-Package pdftex.def Info: FlowChart.png used on input line 60.
-(pdftex.def)             Requested size: 252.94499pt x 494.56186pt.
-
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 60--60
-[][] 
- []
+LaTeX Warning: Citation `systems' on page 1 undefined on input line 56.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -274,34 +291,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 62--64
-
- []
-
-<R2.png, id=14, 637.63219pt x 317.68687pt>
-File: R2.png Graphic file (type png)
- <use R2.png>
-Package pdftex.def Info: R2.png used on input line 70.
-(pdftex.def)             Requested size: 252.94499pt x 126.02542pt.
-
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 70--70
-[][] 
- []
-
-<power.png, id=15, 571.38469pt x 319.94531pt>
-File: power.png Graphic file (type png)
- <use power.png>
-Package pdftex.def Info: power.png used on input line 72.
-(pdftex.def)             Requested size: 252.94499pt x 141.63559pt.
-
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 72--72
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
-
- []
+<flowchart.png, id=12, 123.46124pt x 287.0725pt>
+File: flowchart.png Graphic file (type png)
+ <use flowchart.png>
+Package pdftex.def Info: flowchart.png used on input line 81.
+(pdftex.def)             Requested size: 108.78749pt x 252.94499pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -310,82 +304,165 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2 <C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/T
-hesis/FlowChart.png> <C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Inform
-atics-Internship/Thesis/R2.png> <C:/Users/Taghi/eclipseWorkspace/School/Project
-/Bio-Informatics-Internship/Thesis/power.png>]
-<Dendrogram.png, id=26, 554.82281pt x 444.15938pt>
-File: Dendrogram.png Graphic file (type png)
- <use Dendrogram.png>
-Package pdftex.def Info: Dendrogram.png used on input line 105.
-(pdftex.def)             Requested size: 252.94499pt x 202.49269pt.
+hesis/flowchart.png>] <powerNew.png, id=23, 572.1375pt x 318.43968pt>
+File: powerNew.png Graphic file (type png)
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 105--105
+<use powerNew.png>
+Package pdftex.def Info: powerNew.png used on input line 96.
+(pdftex.def)             Requested size: 252.94499pt x 140.78442pt.
+
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 96--96
+[][] 
+ []
+
+<scaleFreeNew.png, id=24, 637.63219pt x 321.45094pt>
+File: scaleFreeNew.png Graphic file (type png)
+ <use scaleFreeNew.png>
+Package pdftex.def Info: scaleFreeNew.png used on input line 102.
+(pdftex.def)             Requested size: 252.94499pt x 127.51862pt.
+
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 102--102
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
-[]\OT1/cmr/m/n/10 Lingxue Zhang, Sey-oung Kim, "Learn-
+Underfull \hbox (badness 1466) in paragraph at lines 112--113
+\OT1/cmr/m/n/10 net-works, which is then adapted for weighted co-
+ []
+
+[3 <C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/T
+hesis/powerNew.png> <C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informa
+tics-Internship/Thesis/scaleFreeNew.png>] [4]
+<SVM.png, id=35, 513.92pt x 444.66125pt>
+File: SVM.png Graphic file (type png)
+ <use SVM.png>
+Package pdftex.def Info: SVM.png used on input line 206.
+(pdftex.def)             Requested size: 252.94499pt x 218.85617pt.
+
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 206--206
+[][] 
+ []
+
+[5 <C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/T
+hesis/SVM.png>] [6]
+Underfull \hbox (badness 5954) in paragraph at lines 253--255
+\OT1/cmr/m/n/10 where D is the di-ag-o-nal ma-trix with $\OML/cmm/m/it/10 D[] \
+OT1/cmr/m/n/10 =$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
-\OT1/cmr/m/n/10 ing Gene Net-works un-der SNP Per-
+Overfull \hbox (16.12149pt too wide) detected at line 290
+ []$[]  \OML/cmm/m/it/10 l[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ; h[]\OT1/cmr/m/
+n/10 ) = [](\OMS/cmsy/m/n/10  \OML/cmm/m/it/10 exp\OT1/cmr/m/n/10 (\OML/cmm/m/
+it/10 Z[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 H[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
+0 t[]\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 []\OT1/cmr/m/n/10 [[](\OML/cmm/m/it/
+10 h[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t[]\OT1/cmr/m/n/10 )) + \OML/cmm/m/it/1
+0 Z[]\OT1/cmr/m/n/10 ])$ 
+ []
+
+<netcox.png, id=43, 622.57594pt x 422.32782pt>
+File: netcox.png Graphic file (type png)
+ <use netcox.png>
+Package pdftex.def Info: netcox.png used on input line 294.
+(pdftex.def)             Requested size: 252.94499pt x 171.58958pt.
+
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 294--294
+[][] 
+ []
+
+[7 <C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/T
+hesis/netcox.png>] <logistic.png, id=50, 602.25pt x 401.5pt>
+File: logistic.png Graphic file (type png)
+
+<use logistic.png>
+Package pdftex.def Info: logistic.png used on input line 314.
+(pdftex.def)             Requested size: 252.94499pt x 168.62885pt.
+
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 314--314
+[][] 
+ []
+
+<dendrogram.png, id=51, 554.82281pt x 444.15938pt>
+File: dendrogram.png Graphic file (type png)
+ <use dendrogram.png>
+Package pdftex.def Info: dendrogram.png used on input line 331.
+(pdftex.def)             Requested size: 252.94499pt x 202.49269pt.
+
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 331--331
+[][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
-\OT1/cmr/m/n/10 tur-ba-tions Us-ing eQTL Datasets"
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/
+Thesis/logistic.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 341--341
+[]\OT1/cmr/m/n/10 Already re-lated dis-
  []
 
+
+Underfull \hbox (badness 2042) in paragraph at lines 342--342
+[]\OT1/cmr/m/n/10 Atherosclerosis and car-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 349--349
+[]\OT1/cmr/m/n/10 Cervical in-traep-ithe-lial
+ []
+
+[9 <C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/T
+hesis/dendrogram.png>]
+Underfull \vbox (badness 2600) has occurred while \output is active []
+
+ [10]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
-[3 <C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/T
-hesis/Dendrogram.png>]
-Underfull \hbox (badness 1320) in paragraph at lines 129--130
+
+Underfull \hbox (badness 1320) in paragraph at lines 444--445
 []\OT1/cmr/m/n/10 Jia Xue \OT1/cmr/m/it/10 et al.\OT1/cmr/m/n/10 , "Transcripto
 me-Based Net-work
  []
 
 
-Underfull \hbox (badness 1975) in paragraph at lines 131--132
+Underfull \hbox (badness 1975) in paragraph at lines 445--446
 []\OT1/cmr/m/n/10 Albert, R. and Barabasi, A. L., "Emer-gence
  []
 
-[4
-
-]
+[11]
 (C:\Users\Taghi\eclipseWorkspace\School\Project\Bio-Informatics-Internship\Thes
 is\Thesis.aux)
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2813 strings out of 493921
- 34821 string characters out of 3147283
- 103474 words of memory out of 3000000
- 6090 multiletter control sequences out of 15000+200000
+ 4224 strings out of 493921
+ 54812 string characters out of 3147283
+ 150941 words of memory out of 3000000
+ 7484 multiletter control sequences out of 15000+200000
  10507 words of font info for 38 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 31i,11n,45p,1047b,358s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 31i,12n,45p,1482b,412s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Thesis.pdf (4 pages, 334857 bytes).
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmti10.pfb>
+Output written on Thesis.pdf (11 pages, 591605 bytes).
 PDF statistics:
- 80 PDF objects out of 1000 (max. 8388607)
+ 117 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

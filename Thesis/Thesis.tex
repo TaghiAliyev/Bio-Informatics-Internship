@@ -44,6 +44,7 @@ University of Maastricht,  supervisors: Prof. Dr. Ir. Eric Biessens, Dr. Jo\"{e}
 %---------------------------------------------------------------------------
 
 \begin{abstract}
+Atherosclerosis is a specific type of arteriosclerosis, in which artery walls thickens as a result of accumulation of cholesterol, toxins, triglyceride and other irritants and is a result of processes taking place in a complex network of cells. Main focus of this paper is on Weighted Gene Co-expression Network Analysis(WGCNA), Feature Selection, Survival Analysis and Logistic Regression. WGCNA is a widely-used technique for getting a better idea of underlying correlation among the genes. Modules that are obtained as a result from these network analysis can be used to find transcription factors or enriched gene ontologies . In order to find possible candidate genes, Survival analysis and Logistic regression methods are exploited. One problem faced by both methods is the overfitting problem. Feature selection and Network-Cox model are used for dealing with the high dimensionality of the input. Above mentioned methods were able to produce set of genes already associated with the atherosclerosis or its symptoms and also introduced possible new targets, making them interesting alternative to include in future research.
 
 \smallskip
 \noindent \textbf{Keywords: } Weighted Gene Correlation Network Analysis, Regression, mRNA, Atherosclerosis, Feature Selection, Networks
@@ -53,7 +54,9 @@ University of Maastricht,  supervisors: Prof. Dr. Ir. Eric Biessens, Dr. Jo\"{e}
 
 % Sections go here
 \section{Introduction}
-Atherosclerosis is a heart disease in which an artery wall thickens as a result of accumulation of calcium and fatty materials such as cholesterol and triglyceride. Arteries are blood vessels that carry oxygen-rich blood to your heart and other parts of the body. Recent research concerning atherosclerosis focused on finding new target genes that will lead to better understanding of the disease and generation of new treatments. Although, most of the research done so far focused on systems biology methods \cite{systems}, standard mapping techniques, random forests, neural networks and some others, lately, also some papers have been published trying to analyse patient data using more complex and statistical methods. Considering successful usage of Weighted Gene Co-expression Network Analysis, Cox regression models in identification of target genes in cancer research\cite{wgcna2,cox2,netcox} lead to the idea of performing experiments and analysis using these techniques in research of cardiovascular diseases. The goal and main focus of this article is to investigate the application of Weighted Gene Co-expression networks and Cox models in research of cardiovascular diseases.
+Atherosclerosis is a heart disease in which an artery wall thickens as a result of accumulation of calcium and fatty materials such as cholesterol and triglyceride. When irritants enter the blood, they may cause the endothelial cell dysfunction. This dysfunction leads to cholesterol, toxins and some other irritants to enter the inner layer of the blood vessels. Sudden reaction of the macrophages and smooth muscle cells, try to cover the damage and reduce the amount of irritants, but as a result, they become the part of the inner layer wall of the blood vessel, so leading to the artery walls thickening and losing flexibility.
+
+Recent research concerning atherosclerosis focused on finding new target genes that will lead to better understanding of the disease and generation of new treatments. Although, most of the research done so far focused on systems biology methods \cite{systems}, standard mapping techniques, random forests, neural networks and some others, lately, also some papers have been published trying to analyse patient data using more complex and statistical methods. Considering successful usage of Weighted Gene Co-expression Network Analysis, Cox regression models in identification of target genes in cancer research\cite{wgcna2,cox2,netcox} lead to the idea of performing experiments and analysis using these techniques in research of cardiovascular diseases. The goal and main focus of this article is to investigate the application of Weighted Gene Co-expression networks and Cox models in research of cardiovascular diseases.
 
 Weighted Gene Co-expression networks are proven to be a powerful tool in analysis of biological networks \cite{wgcna2}. Even though, there exists a framework with implementation of Weighted Gene Co-expression networks \cite{wgcna3}, there are still questions to be answered by a researcher in order to make best use of the framework. Couple of different analysis tools and techniques are introduced in order to make better sense of the results that Weighted Gene Co-expression framework returns.
 
@@ -65,20 +68,20 @@ The structure of this article is as follows. Section 2 will describe the data se
 Patient data that is used for this study is collected by CTMM and represents mRNA and clinical data of 461 patients. There are 20826 genes in mRNA data set. These genes are represented with their expression profiles over all patients. Clinical data is composed of personal medical history of patients and the entries representing times till cardiovascular event occurred. Main focus was on gene data set rather than classical approach of using personal patient data as predictors of the cardiovascular event.
 
 \section{Weighted Gene Co-Expression Network}
-Gene co-expression networks represent the interaction between the nodes and helps to investigate the functionality of genes on system-level. Construction of such a networks is straightforward: Nodes represent the genes and nodes are connected if genes are significantly correlated. This already presents one challenge of picking correct threshold that will define the significance of the connection. One approach proposed by Steve Horvath and his team was the idea of giving weight to the connection between each pair of genes \cite{wgcna3}. They achieved this by creating a general framework for "soft" thresholding that gave the weights to pair of genes in weighted network. Section 3.1 will mention the steps needed for construction of such networks. Sections 3.2, 3.3, 3.4 and 3.5 will delve into these steps more in detail. Section 6, Experiments, will show the result of the Weighted Gene Co-expression Network analysis and Section 7 and 8 will mention possible future work that can be done on these results.
+Gene co-expression networks represent the interaction between the nodes and helps to investigate the functionality of genes on system-level. Construction of such a networks is straightforward: Nodes represent the genes and nodes are connected if genes are significantly correlated. This already presents one challenge of picking correct threshold that will define the significance of the connection. One approach proposed by Steve Horvath and his team was the idea of giving weight to the connection between each pair of genes \cite{wgcna,wgcna3}. They achieved this by creating a general framework for "soft" thresholding that gave the weights to pair of genes in weighted network. Section 3.1 will mention the steps needed for construction of such networks. Sections 3.2, 3.3, 3.4 and 3.5 will delve into these steps more in detail. Section 6, Experiments, will show the result of the Weighted Gene Co-expression Network analysis and Section 7 and 8 will mention possible future work that can be done on these results.
+
 
 \subsection{Network construction}
 
 Weighted gene co-expression networks are reverse engineering methods for finding the connection and correlation between the genes using genes` expression profiles. Each co-expression network corresponds to an adjacency matrix, which in its own term encodes the correlation between each pair of genes. Their construction is essential in detection of modules and analysis of interconnectivity among the genes represented in patient data. General flowchart for constructing a gene co-expression network is represented in Figure 3.1.
 
+\dkepicH{flowchart}{Flowchart showing the steps in network construction}
 As it is pointed out in Figure 3.1, first couple of steps relate to deciding on the measure and the function that will be used to assign weight of correlation between each pair of genes in the network. Once the similarity measure and adjacency function is decided upon, next step is to find the best fitting parameters.
 
 
 \subsection{Adjacency function and Similarity measure}
 
 First step in gene co-expression network construction is the decision a researches has to make on adjacency function and similarity measure. This similarity measures the level of correlation/agreement between gene expression profiles across all the patients. It is standard to use Pearson correlation as a similarity/co-expression measure between pair of genes in network analysis. Pearson correlation between genes $i$ and $j$ will be denoted as $s_{ij} = \mid\mathrm{cor}(i,j)\mid $. Then, similarity matrix is denoted by $S = [s_{ij}] $.
-
-\dkepicH{flowchart}{Flowchart showing the steps in network construction}
 
 Next step is to define adjacency matrix using similarity measure defined above. One way of choosing adjacency matrix that will be using "soft" thresholding instead of "hard" thresholding is power adjacency function. The power adjacency function is defined as follows:
 \begin{equation}
@@ -121,13 +124,6 @@ d^{\omega}_{ij} = 1 - \omega_{ij}
 \end{equation}
 
 In order to group genes together into the modules, one general approach which is also used in this article, is the usage of hierarchical clustering coupled with TOM-based dissimilarity $d^{\omega}_{ij}$.
-
-
-\subsection{Intramodular Connectivity}
-
-In weighted gene co-expression networks, one interesting measure that can be defined, is the level of the connectivity of a gene with respect to the other genes of the module that a gene is part of. This kind of measure is called intramodular connectivity. Intramodular connectivity can distinguish the central hub genes of a module from other genes. These genes are shown to be of importance in analysis of data set and finding of new target genes. Additionally, intramodular connectivity measures are more biologically meaningful rather than whole-network counterparts. One example of this is when a gene is highly interconnected within a small and very important module, whereas some other gene might have large connectivity in a bigger but less important module.
-
-In most cases, intramodular connectivity is computed by adjusting the topological overlap based connectivity(Equation 3.3) and connectivity measure(Equation 3.2) equations. Main adjustment that is performed is to only include the genes from the same module in the computations.
 
 \section{Survival Analysis}
 In most research projects, one interesting aspect to analyse is the correlation between some covariates/predictors and an event of interest. Survival analysis is the discipline that aims at creating models that is able to inspect the connection between predictors and time-to-event. This type of analysis is mostly applied in health sciences from which the name "survival analysis" is derived, as in most cases event of interest is the time till death. In case of cardiovascular pathology and research, event of interest is time till the cardiovascular event happens. Some examples of cardiovascular events are heart attacks, infarction and cardiac arrest.
@@ -413,19 +409,19 @@ Gene ID & p-value & Ranking \\ \hline
 \end{tabular}
 \end{center}
 
-\subsection{Discussion}
-
 \section{Conclusion}
 
 As a conclusion, Weighted gene co-expression networks are still an interesting approach that is used by many others. Modules detected by WGCNA package could have been further analysed for enriched pathways, ontologies or transcription factors, but this kind of analysis was out of scope of this paper.
 
-Feature selection techniques combined with regression models are seem as an interesting alternative for future research, as their results present the genes already related to cardiovascular diseases. Next to these genes, results also suggest to further analyse some genes, namely \textit{SYT10} and \textit{CLEC4F}. These methods have not been used extensively by other scholars, making them more appealing to exploit. Additionally, Network-Cox models presented interesting approach for dealing with dimensionality problems of simple Cox models by including co-expression network information in their model. Similar to logistic regression and feature selection, Network-Cox model analysis offered new target genes that had not been associated with cardiovascular diseases, namely \textit{gene1} and \textit{gene2}. Also, Network-Cox models were able to point out the genes that have already been found by other research groups only by knowing their expression profiles, which indicate their power and makes them an extra option in future research.
+Feature selection techniques combined with regression models are seem as an interesting alternative for future research, as their results present the genes already related to cardiovascular diseases. Next to these genes, results also suggest to further analyse some genes, namely \textit{SYT10} and \textit{CLEC4F}. These methods have not been used extensively by other scholars, making them more appealing to exploit. Additionally, Network-Cox models presented interesting approach for dealing with dimensionality problems of simple Cox models by including co-expression network information in their model. Similar to logistic regression and feature selection, Network-Cox model analysis offered new target genes that had not been associated with cardiovascular diseases, namely \textit{gene1} and \textit{gene2}. Also, Network-Cox models were able to point out the genes that have already been found by other research groups only by knowing their expression profiles, which indicate their power and makes them an extra option in future research. One thing that should be kept in mind that, these genes are possible candidate genes that can turn out to be target genes relating to the disease, but more complex analysis should be done on their functional and structural models.
 
 \section{Future Work}
 
-As already mentioned, one possible further analysis for better understanding of the biological processes happening among genes, Gene Ontology Enrichment Analysis, Transcription Factor analysis and MicroRNA analysis could have been performed on the modules detected by WGCNA modules.
+As already mentioned, one possible further analysis for better understanding of the biological processes happening among genes, Gene Ontology Enrichment Analysis, Transcription Factor analysis and MicroRNA analysis could have been performed on the modules detected by WGCNA modules. Furthermore, intramodular connectivity analysis can be included for finding central hub genes of each module, which has been shown to be of interest for research \cite{wgcna2}.
 
 Additionally, Feature Selection experiments could be further extended to include different techniques in order to improve results and possibly find more target genes for future research. Also, Ensemble Feature Selection, Logistic Regression and Network-Cox models explained in this paper can be used to examine the relation between genes and different variables that are of interest for cardiovascular research that were not examined in this paper. Multi-class regression might have been added for the assessment of the link between the genes and multiple variables of interest at the same time.
+
+Once results are obtained from above mentioned techniques, more in-detail analysis of candidates for being a target gene should be performed in order to prove their relevance to the atherosclerosis and its symptoms.
 
 %---------------------------------------------------------------------------
 
@@ -433,6 +429,7 @@ Additionally, Feature Selection experiments could be further extended to include
 % Bibliography
 
 \begin{thebibliography}{99}
+\bibitem{systems} Stephen A Ramsey, Elizabeth S. Gold, "A systems biology approach to understanding atherosclerosis", \emph{EMBO Mol Med. 2010 March, 2(3) : 79-89}
 \bibitem{wgcna} Langfelder P, Horvath S , "WGCNA: an R package for weighted correlation network analysis". \emph{BMC Bioinformatics 2008, 9:559}
 \bibitem{wgcna3} Bin Zhang, Steve Horvath, " A general framework for Weighted Gene Co-Expression Network Analysis". \emph{Statistical Applications in Genetics and Molecular Biology. Volume 4, Issue 1, ISSN (Online) 1544-6115}
 \bibitem{cox} John Fox, "Cox Proportional-Hazards Regression for Survival Data", \emph{Appendix to An R and S-PLUS Companion to Applied Regression}
@@ -451,7 +448,5 @@ Additionally, Feature Selection experiments could be further extended to include
 \bibitem{javaml} Thomas Abeel, Y.V. de Peer \& Y. Saeys, "Java-ML : A Machine Learning Library", \emph{Journal of Machine Learning Research, 2009, 10, 931-934}
 \bibitem{esophagitis} Jau-Jiuan Sheu \emph{et al.}, "Reflux Esophagitis and the Risk of Stroke in Young Adults: A 1-Year Population-Based Follow-Up Study", \emph{Stroke - Journal of the American Heart Association}
 \end{thebibliography}
-
-\appendix
 
 \end{document}

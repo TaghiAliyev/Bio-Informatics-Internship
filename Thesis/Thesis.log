@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.1.9)  19 JUN 2014 23:21
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.1.9)  23 JUN 2014 15:17
 entering extended mode
 **Thesis.tex
 
@@ -281,12 +281,21 @@ LaTeX Font Info:    ... okay on input line 28.
 )
 english
 
-LaTeX Warning: Citation `systems' on page 1 undefined on input line 56.
+Underfull \hbox (badness 1067) in paragraph at lines 47--48
+\OT1/cmr/m/n/10 sult of ac-cu-mu-la-tion of choles-terol, tox-ins,
+ []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 1024) in paragraph at lines 47--48
+\OT1/cmr/m/n/10 net-work of cells. Main fo-cus of this pa-
+ []
 
- [1{C:/Users/Taghi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+Underfull \hbox (badness 2261) in paragraph at lines 47--48
+\OT1/cmr/m/n/10 Sur-vival Anal-y-sis and Lo-gis-tic Re-gres-sion.
+ []
+
+[1{C:/Users/Taghi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 
@@ -294,7 +303,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <flowchart.png, id=12, 123.46124pt x 287.0725pt>
 File: flowchart.png Graphic file (type png)
  <use flowchart.png>
-Package pdftex.def Info: flowchart.png used on input line 81.
+Package pdftex.def Info: flowchart.png used on input line 78.
 (pdftex.def)             Requested size: 108.78749pt x 252.94499pt.
 
 
@@ -304,29 +313,29 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2 <C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/T
-hesis/flowchart.png>] <powerNew.png, id=23, 572.1375pt x 318.43968pt>
+hesis/flowchart.png>] <powerNew.png, id=21, 572.1375pt x 318.43968pt>
 File: powerNew.png Graphic file (type png)
 
 <use powerNew.png>
-Package pdftex.def Info: powerNew.png used on input line 96.
+Package pdftex.def Info: powerNew.png used on input line 99.
 (pdftex.def)             Requested size: 252.94499pt x 140.78442pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 96--96
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 99--99
 [][] 
  []
 
-<scaleFreeNew.png, id=24, 637.63219pt x 321.45094pt>
+<scaleFreeNew.png, id=22, 637.63219pt x 321.45094pt>
 File: scaleFreeNew.png Graphic file (type png)
  <use scaleFreeNew.png>
-Package pdftex.def Info: scaleFreeNew.png used on input line 102.
+Package pdftex.def Info: scaleFreeNew.png used on input line 105.
 (pdftex.def)             Requested size: 252.94499pt x 127.51862pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 102--102
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 105--105
 [][] 
  []
 
 
-Underfull \hbox (badness 1466) in paragraph at lines 112--113
+Underfull \hbox (badness 1466) in paragraph at lines 115--116
 \OT1/cmr/m/n/10 net-works, which is then adapted for weighted co-
  []
 
@@ -336,22 +345,22 @@ tics-Internship/Thesis/scaleFreeNew.png>] [4]
 <SVM.png, id=35, 513.92pt x 444.66125pt>
 File: SVM.png Graphic file (type png)
  <use SVM.png>
-Package pdftex.def Info: SVM.png used on input line 206.
+Package pdftex.def Info: SVM.png used on input line 202.
 (pdftex.def)             Requested size: 252.94499pt x 218.85617pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 206--206
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 202--202
 [][] 
  []
 
 [5 <C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/T
 hesis/SVM.png>] [6]
-Underfull \hbox (badness 5954) in paragraph at lines 253--255
+Underfull \hbox (badness 5954) in paragraph at lines 249--251
 \OT1/cmr/m/n/10 where D is the di-ag-o-nal ma-trix with $\OML/cmm/m/it/10 D[] \
 OT1/cmr/m/n/10 =$
  []
 
 
-Overfull \hbox (16.12149pt too wide) detected at line 290
+Overfull \hbox (16.12149pt too wide) detected at line 286
  []$[]  \OML/cmm/m/it/10 l[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ; h[]\OT1/cmr/m/
 n/10 ) = [](\OMS/cmsy/m/n/10  \OML/cmm/m/it/10 exp\OT1/cmr/m/n/10 (\OML/cmm/m/
 it/10 Z[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 H[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
@@ -363,10 +372,10 @@ it/10 Z[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 H[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
 <netcox.png, id=43, 622.57594pt x 422.32782pt>
 File: netcox.png Graphic file (type png)
  <use netcox.png>
-Package pdftex.def Info: netcox.png used on input line 294.
+Package pdftex.def Info: netcox.png used on input line 290.
 (pdftex.def)             Requested size: 252.94499pt x 171.58958pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 294--294
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 290--290
 [][] 
  []
 
@@ -375,20 +384,20 @@ hesis/netcox.png>] <logistic.png, id=50, 602.25pt x 401.5pt>
 File: logistic.png Graphic file (type png)
 
 <use logistic.png>
-Package pdftex.def Info: logistic.png used on input line 314.
+Package pdftex.def Info: logistic.png used on input line 310.
 (pdftex.def)             Requested size: 252.94499pt x 168.62885pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 314--314
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 310--310
 [][] 
  []
 
 <dendrogram.png, id=51, 554.82281pt x 444.15938pt>
 File: dendrogram.png Graphic file (type png)
  <use dendrogram.png>
-Package pdftex.def Info: dendrogram.png used on input line 331.
+Package pdftex.def Info: dendrogram.png used on input line 327.
 (pdftex.def)             Requested size: 252.94499pt x 202.49269pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 331--331
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 327--327
 [][] 
  []
 
@@ -397,17 +406,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8 <C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/
 Thesis/logistic.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 341--341
+Underfull \hbox (badness 10000) in paragraph at lines 337--337
 []\OT1/cmr/m/n/10 Already re-lated dis-
  []
 
 
-Underfull \hbox (badness 2042) in paragraph at lines 342--342
+Underfull \hbox (badness 2042) in paragraph at lines 338--338
 []\OT1/cmr/m/n/10 Atherosclerosis and car-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--349
+Underfull \hbox (badness 10000) in paragraph at lines 345--345
 []\OT1/cmr/m/n/10 Cervical in-traep-ithe-lial
  []
 
@@ -420,47 +429,43 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
 
-Underfull \hbox (badness 1320) in paragraph at lines 444--445
+Underfull \hbox (badness 1320) in paragraph at lines 441--442
 []\OT1/cmr/m/n/10 Jia Xue \OT1/cmr/m/it/10 et al.\OT1/cmr/m/n/10 , "Transcripto
 me-Based Net-work
  []
 
 
-Underfull \hbox (badness 1975) in paragraph at lines 445--446
+Underfull \hbox (badness 1975) in paragraph at lines 442--443
 []\OT1/cmr/m/n/10 Albert, R. and Barabasi, A. L., "Emer-gence
  []
 
 [11]
 (C:\Users\Taghi\eclipseWorkspace\School\Project\Bio-Informatics-Internship\Thes
-is\Thesis.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+is\Thesis.aux) ) 
 Here is how much of TeX's memory you used:
  4224 strings out of 493921
  54812 string characters out of 3147283
- 150941 words of memory out of 3000000
+ 150946 words of memory out of 3000000
  7484 multiletter control sequences out of 15000+200000
  10507 words of font info for 38 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  31i,12n,45p,1482b,412s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmti10.pfb>
-Output written on Thesis.pdf (11 pages, 591605 bytes).
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
+x10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
+6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmti10.pfb>
+Output written on Thesis.pdf (11 pages, 592535 bytes).
 PDF statistics:
  117 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

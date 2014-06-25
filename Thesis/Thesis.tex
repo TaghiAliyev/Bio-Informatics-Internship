@@ -11,7 +11,7 @@
 
 \newcommand{\dkepic}[2]{ %2 referes to the amount of "parameters" in this new "method"
 	\begin{figure}[H] %the H signifies that the image will be put 'Here', and can only be used by using package 'float'
-	\includegraphics[width = 0.5\textwidth]{#1}
+	\centerline{\includegraphics[width = 0.5\textwidth]{#1}}
 	\caption{#2}
 	\label{#1}
 	\end{figure}
@@ -19,7 +19,7 @@
 
 \newcommand{\dkepicH}[2]{ %2 referes to the amount of "parameters" in this new "method"
 	\begin{figure}[H] %the H signifies that the image will be put 'Here', and can only be used by using package 'float'
-	\includegraphics[height = 0.5\textwidth]{#1}
+	\centerline{\includegraphics[height = 0.35\textwidth]{#1}}
 	\caption{#2}
 	\label{#1}
 	\end{figure}
@@ -58,11 +58,11 @@ Atherosclerosis is a heart disease in which an artery wall thickens as a result 
 
 Recent research concerning atherosclerosis focused on finding new target genes that will lead to better understanding of the disease and generation of new treatments. Although, most of the research done so far focused on systems biology methods \cite{systems}, standard mapping techniques, random forests, neural networks and some others, lately, also some papers have been published trying to analyse patient data using more complex and statistical methods. Considering successful usage of Weighted Gene Co-expression Network Analysis, Cox regression models in identification of target genes in cancer research\cite{wgcna2,cox2,netcox} lead to the idea of performing experiments and analysis using these techniques in research of cardiovascular diseases. The goal and main focus of this article is to investigate the application of Weighted Gene Co-expression networks and Cox models in research of cardiovascular diseases.
 
-Weighted Gene Co-expression networks are proven to be a powerful tool in analysis of biological networks \cite{wgcna2}. Even though, there exists a framework with implementation of Weighted Gene Co-expression networks \cite{wgcna3}, there are still questions to be answered by a researcher in order to make best use of the framework. Couple of different analysis tools and techniques are introduced in order to make better sense of the results that Weighted Gene Co-expression framework returns.
+Weighted Gene Co-expression networks are proven to be a powerful tool in analysis of biological networks \cite{wgcna2}. Even though, there exists a framework with implementation of Weighted Gene Co-expression networks \cite{wgcna3}, there are still questions to be answered in order to make best use of the framework. Couple of different analysis tools and techniques are introduced in order to make better sense of the results that Weighted Gene Co-expression (WGCNA) framework returns.
 
 One of the problems introduced by the application of Cox models is the overfitting problem and their poor performance on high dimensional data sets. Therefore, one aspect that will be explored is the possible reduction of dimensionality of gene data set through the use of ensemble feature selection and Network-Cox models \cite{bootstrap,netcox}.
 
-The structure of this article is as follows. Section 2 will describe the data set used for this research. In Section 3, introduction will be given to weighted gene co-expression networks. Later in that section, specific processes regarding co-expression networks and their construction will be discussed and explained. Next, survival analysis and Cox models will be discussed in Section 4. Also in Section 4, couple of enhancements of Cox regression model, namely Network-Cox model(4.3) and Ensemble Feature Selection through the use of linear support vector machines and recursive feature elimination (4.2) are presented to the reader. Section 5 will explain a regression approach, namely logistic regression technique, which measures the relationship between the predictors and the outcome class, which, in most cases, is binary.  After this, Section 6 shows different experimental setups and discusses their results. Section 7 summarizes the findings and results of the research. At last, Section 8 goes through some additional enhancements and techniques that might help and are interesting to investigate in the research of cardiovascular diseases.
+The structure of this article is as follows: Section 2 will describe the data set used for this research. In Section 3, introduction will be given to WGCNA. Later in that section, specific processes regarding co-expression networks and their construction will be discussed and explained. Next, survival analysis and Cox models will be discussed in Section 4. Also in Section 4, couple of enhancements of Cox regression model, namely Network-Cox model(4.3) and Ensemble Feature Selection through the use of linear support vector machines and recursive feature elimination (4.2) are presented to the reader. Section 5 will explain a regression approach, namely logistic regression technique, which measures the relationship between the predictors and the outcome class, which, in most cases, is binary.  After this, Section 6 shows different experimental setups and discusses their results. Section 7 summarizes the findings and results of the research. At last, Section 8 goes through some additional enhancements and techniques that might help and are interesting to investigate in the research of cardiovascular diseases.
 
 \section{Data}
 Patient data that is used for this study is collected by CTMM and represents mRNA and clinical data of 461 patients. There are 20826 genes in mRNA data set. These genes are represented with their expression profiles over all patients. Clinical data is composed of personal medical history of patients and the entries representing times till cardiovascular event occurred. Main focus was on gene data set rather than classical approach of using personal patient data as predictors of the cardiovascular event.
@@ -81,20 +81,20 @@ As it is pointed out in Figure 3.1, first couple of steps relate to deciding on 
 
 \subsection{Adjacency function and Similarity measure}
 
-First step in gene co-expression network construction is the decision a researches has to make on adjacency function and similarity measure. This similarity measures the level of correlation/agreement between gene expression profiles across all the patients. It is standard to use Pearson correlation as a similarity/co-expression measure between pair of genes in network analysis. Pearson correlation between genes $i$ and $j$ will be denoted as $s_{ij} = \mid\mathrm{cor}(i,j)\mid $. Then, similarity matrix is denoted by $S = [s_{ij}] $.
+First step in gene co-expression network construction is the decision that has to be made on adjacency function and similarity measure. This similarity measures the level of correlation/agreement between gene expression profiles across all the patients. It is standard to use Pearson correlation as a similarity/co-expression measure between pair of genes in network analysis. Pearson correlation between genes $i$ and $j$ will be denoted as $s_{ij} = \mid\mathrm{cor}(i,j)\mid $. Then, similarity matrix is denoted by $S = [s_{ij}]$, for all $i$ and $j$.
 
-Next step is to define adjacency matrix using similarity measure defined above. One way of choosing adjacency matrix that will be using "soft" thresholding instead of "hard" thresholding is power adjacency function. The power adjacency function is defined as follows:
+Next step is to define adjacency matrix using similarity measure defined above. One way of choosing adjacency matrix that will be using "soft" thresholding instead of "hard" thresholding is power adjacency function. The power adjacency function, $a_{ij}$, is defined as follows:
 \begin{equation}
-a_{ij} = \mathrm{power}(s_{ij},\beta) = \mid s_{ij} \mid^\beta
+a_{ij} = \mid s_{ij} \mid^\beta
 \end{equation}
 
-One important thing to take a look at is that, power adjacency function uses $\beta$ in order to determine the adjacency value between genes $i$ and $j$. Choice of $\beta$, which is explained in next subsection, is made such that network fits the scale-free topology.
+One important thing to take a look at is that the power adjacency function uses $\beta$ in order to determine the adjacency value between genes $i$ and $j$. The choice of $\beta$, which is explained in next subsection, is made such that network fits the scale-free topology.
 
 \subsection{Selection of soft-thresholding power}
 
-It has been shown that in many real networks, as well as random networks, probability that a node is connected with k other nodes decays as a power law $p(k) \sim k ^{-\gamma}$ and this statement is the defining property of scale-free networks and topology \cite{barabas1999}. It is known that scale-free networks are very heterogeneous and are dominated by a few hub genes that have high connectivity value.
+It has been shown that in many real networks, as well as random networks, the probability that a node is connected with $k$ other nodes decays as a power law $p(k) \sim k ^{-\gamma}$ and this statement is the defining property of scale-free networks and topology \cite{barabas1999}. It is known that scale-free networks are very heterogeneous and are dominated by a few hub genes that have high connectivity value.
 
-As already mentioned, one has to select the soft-threshold power, $\beta$, that is used for the computation of the adjacency function. One way to achieve this goal is to look at different values of $\beta$ and consider only the ones that lead to a network satisfying scale-free topology. High $R^2$ value is a indicator of approximate fitting. Figure 3.2 shows the relation between candidate values for $\beta$ and $R^2$ values. It can be seen that, lowest power for which scale-free topology criterion is satisfied is 7 (Roughly, $R^2 \geq 0.9$). $\beta$ value of 7 is chosen as a soft-thresholding power for adjacency function for this data set and is the power used throughout the rest of this article.
+As already mentioned, one has to select the soft-threshold power, $\beta$, that is used for the computation of the adjacency function. One way to make a decision on the value of the $\beta$ is to look at different values of it and consider only the ones that lead to a network satisfying scale-free topology. How well the data fits the model is determined by the coefficient of determination, $R^2$. High $R^2$ value is an indicator of approximate fitting. Figure 3.2 shows the relation between candidate values for $\beta$ and $R^2$ values. It can be seen that, lowest power for which scale-free topology criterion is satisfied is 7 (Roughly, $R^2 \geq 0.9$). $\beta$ value of 7 is chosen as a soft-thresholding power for adjacency function for this data set and is the power used throughout the rest of this article.
 
 \dkepic{powerNew}{Soft-thresholding power selection}
 
@@ -107,7 +107,7 @@ One other way of showing that $\beta$ value of approximately satisfies scale-fre
 \subsection{Module Detection}
 Important point of co-expression networks is to find set of genes that are tightly connected to each other. Modules represent this kind of set of genes. In weighted gene co-expression networks gene dissimilarity measure in conjunction with a clustering method identifies modules. Topological Overlap Mapping based dissimilarity measure is used for module detection in this article as it was found to result in biologically meaningful modules \cite{ravasz2002}. The topological overlap of two genes reflects their relative interconnectedness.
 
-In order to define Topological Overlap Mapping (TOM), first connectivity of a gene in a weighted network should be defined. Following is the connectivity measure of a gene:
+In order to define Topological Overlap Mapping (TOM), first connectivity of a gene in a weighted network should be defined. Following is the connectivity measure, $k_{i}$, of a gene:
 \begin{equation}
 k_i = \Sigma_{j=1}^n a_{ij}
 \end{equation}
@@ -115,10 +115,10 @@ k_i = \Sigma_{j=1}^n a_{ij}
 Ravasz and colleagues proposed the following topological overlap matrix for unweighted gene co-expression networks, which is then adapted for weighted co-expression networks by Steve Horvath and his team:
 
 \begin{equation}
-\omega _{ij} = \dfrac{l _{ij} + a_{ij}}{min(k_i,k_j) + l - a_{ij}}
+\omega _{ij} = \dfrac{l _{ij} + a_{ij}}{\min{(k_i,k_j)} + l - a_{ij}}
 \end{equation}
 
-where $l_{ij} = \Sigma_u a_{iu}a_{uj}$, and $k_i$ is the gene connectivity defined by Formula 3.2.  The topological overlap matrix $\Omega = [\omega_{ij}]$ is a similarity measure as its entries defined by Formula 3.3, are non-negative and symmetric. Module detection in weighted gene co-expression networks makes use of dissimilarity measure and in order to get TOM-based dissimilarity measure, TOM-based similarity measure is subtracted from 1. In other words, the topological overlap based dissimalirty measure is defined by the following formula:
+where $l_{ij} = \Sigma_u a_{iu}a_{uj}$, and $k_i$ is the gene connectivity defined by (3.2).  The topological overlap matrix $\Omega = [\omega_{ij}]$ is a similarity measure as its entries defined by (3.3), are non-negative and symmetric. Module detection in weighted gene co-expression networks makes use of dissimilarity measure and in order to get TOM-based dissimilarity measure, TOM-based similarity measure is subtracted from 1. In other words, the topological overlap based dissimalirty measure is defined by the following formula:
 \begin{equation}
 d^{\omega}_{ij} = 1 - \omega_{ij}
 \end{equation}
@@ -128,14 +128,14 @@ In order to group genes together into the modules, one general approach which is
 \section{Survival Analysis}
 In most research projects, one interesting aspect to analyse is the correlation between some covariates/predictors and an event of interest. Survival analysis is the discipline that aims at creating models that is able to inspect the connection between predictors and time-to-event. This type of analysis is mostly applied in health sciences from which the name "survival analysis" is derived, as in most cases event of interest is the time till death. In case of cardiovascular pathology and research, event of interest is time till the cardiovascular event happens. Some examples of cardiovascular events are heart attacks, infarction and cardiac arrest.
 
-Couple of notations should be made clear about survival analysis before proceeding forward. One component that is of interest in survival analysis, as already mentioned, is the distribution of survival times. Commonly used representation of distribution of survival times is the \textit{hazard function}, which assesses the instantaneous risk of demise at given time t, conditional on survival time:
+A couple of notations should be made clear about survival analysis before proceeding forward. One component that is of interest in survival analysis, as already mentioned, is the distribution of survival times. Commonly used representation of distribution of survival times is the \textit{hazard function}, which assesses the instantaneous risk of demise at given time t, conditional on survival time:
 \begin{equation}
 h(t) = \lim_{\Delta{t} \leftarrow 0} \dfrac{Pr[(t \leq T < t + \Delta{t})|T \geq t]}{\Delta{t}} = \dfrac{f(t)}{S(t)}
 \end{equation}
 
 where T represents survival time, $f(t)$ is the probability density function and $S(t)$ is the complement of the distribution function. One example of this, is when one has a constant hazard, $h(t) = v$, then this implies an exponential distribution with density function $f(t) = ve^{-vt}$.
 
-Common aspect of data sets analysed using survival analysis is called \textit{censoring}. Most common format of censoring represents observations for which trial period might have expired or patient might have left the trial before the event of interest happening, which is also called right-censoring. In more general terms, censored data is continuous and means event of interest did not happen for one or another reason. Censoring complicates the likelihood function and modelling process. Censored data might be either right-censored, left-censored or both. An observation is \textit{Left-censored} if its initial time is unknown. If an observation is both left and right-censored, then it is called \textit{interval-censoring}.
+Common aspect of data sets analysed using survival analysis is called \textit{censoring}. The most common format of censoring represents observations for which trial period might have expired or patient might have left the trial before the event of interest happening, which is also called right-censoring. In more general terms, censored data is continuous and means it is unknown if the event of interest happened or not. Censoring complicates the likelihood function and modelling process. Censored data might be either right-censored, left-censored or both. An observation is \textit{Left-censored} if its initial time is unknown. If an observation is both left and right-censored, then it is called \textit{interval-censoring}.
 
 Main focus of this article is to analyse how good of predictors of time till event are some set of genes. One application of survival analysis that will be focused on is Cox Proportional-Hazards model. Different approaches of choosing set of predictor genes exists. Later in the section, enhancement of simple Cox model, namely Network-based Cox model proposed by Zhang \cite{netcox}, and one approach of choosing set of predictor genes, namely Ensemble Feature Selection, are explained.
 
@@ -149,9 +149,9 @@ or, equivalently,
 h_i(t) = \exp(\alpha + \beta_{1}x_{i1} + \beta_{2}x_{i2} + \hdots + \beta_{k}x_{ik})
 \end{equation}
 
-Equations 4.2 and 4.3 show this relation as linear for log hazard and multiplicative for the hazard itself. In these equations, $i$ represents the observation and $x's$ are the covariates/predictors. In this article, $i$ represents patients and $x's$ are the predictor genes used for creation of the model. The constant $\alpha$ represents log-baseline hazard, since $log{h_i(t)} = \alpha$ when all the covariates equal to zero. 
+(4.2) and (4.3) show this relation as linear for log hazard and multiplicative for the hazard itself. In these equations, $i$ represents the observation and $x's$ are the covariates/predictors. In this article, $i$ represents patients and $x's$ are the predictor genes used for creation of the model. The constant $\alpha$ represents log-baseline hazard, since $\log{h_i(t)} = \alpha$ when all the covariates equal to zero. 
 
-\textit{Cox Model} is different from generic case as it does not specify function for baseline hazard $\alpha(t) = h_{0}(t)$. So, Cox model can be expressed using following formula which looks similar to equation of parametric model on the exponential distribution(Equation 4.2):
+\textit{Cox Model} is different from generic case as it does not specify function for baseline hazard $\alpha(t) = h_{0}(t)$. So, Cox model can be expressed using following formula which looks similar to equation of parametric model on the exponential distribution ((4.2)):
 \begin{equation}
 \log{h_{i}(t)} = \alpha(t) + \beta_{1}x_{i1} + \beta_{2}x_{i2} + \hdots + \beta_{k}x_{ik}
 \end{equation}
@@ -162,9 +162,9 @@ h_{i}(t) = h_{0}(t)\exp(\beta_{1}x_{i1} + \beta_{2}x_{i2} + \hdots + \beta_{k}x_
 
 Cox models are \textit{semi-parametric}, as baseline hazard $\alpha$ might enter the model in any form, whereas covariates enter the model linearly. Additionally, Cox models are \textit{proportional-hazards model}. One way of showing this property is to analyse two different observations, namely i and j, that have different values for their covariates. Let $\eta_{i}$ and $\eta_{j}$ represent linear predictors for each observation accordingly. In other words,
 \begin{equation}
-\eta_{i} = \beta_{1}x_{i1} + \beta_{2}x_{i2} + \hdots + \beta_{k}x_{ik}
+\eta_{i} = \beta_{1}x_{i1} + \beta_{2}x_{i2} + \hdots + \beta_{k}x_{ik},
 \end{equation}
-,and, equivalently,
+and, equivalently,
 \begin{equation}
 \eta_{j} = \beta_{1}x_{j1} + \beta_{2}x_{j2} + \hdots + \beta_{k}x_{jk}
 \end{equation}
@@ -176,14 +176,14 @@ h_{i}(t) = h_{0}(t)e^{\eta_{i}}
 h_{j}(t) = h_{0}(t)e^{\eta_{j}}
 \end{equation}
 
-Using Equations 4.8 and 4.9, the hazard ratio of two observations can be find:
+Using (4.8) and (4.9), the hazard ratio of two observations can be find:
 \begin{equation}
 \dfrac{h_{i}(t)}{h_{j}(t)} = \dfrac{h_{0}(t)e^{\eta_{i}}}{h_{0}(t)e^{\eta_{j}}} = \dfrac{e^{\eta_{i}}}{e^{\eta_{j}}}
 \end{equation}
 
-From Equation 4.10, it can be seen that hazard ratio between two different observations, is independent of time t, which implies that Cox models are actually proportional-hazards model.
+From (4.10), it can be seen that hazard ratio between two different observations, is independent of time $t$, which implies that Cox models are actually proportional-hazards model.
 
-Cox model offers couple of advantages with it. Main advantage of Cox models is that, baseline hazard should not be specified, which helps to deal with having arbitrary and possibly incorrect assumptions about the form of baseline hazard. As Cox explains in his paper about Cox proportional-hazards model \cite{coxoriginal}, baseline hazard can be estimated using the method of partial likelihood.
+Cox models offer a couple of advantages. Main advantage of Cox models is that, baseline hazard should not be specified, which helps to deal with having arbitrary and possibly incorrect assumptions about the form of baseline hazard. As Cox explains in his paper about Cox proportional-hazards model \cite{coxoriginal}, baseline hazard can be estimated using the method of partial likelihood.
 
 Although, Cox model is a popular choice for survival analysis, it has its own disadvantages. One disadvantage of Cox models is their lack of being able to deal with high dimensionality of input data. It leads and is linked with the problem more commonly known as \textit{overfitting}. Two different approaches of dealing with this problem are introduced in next subsections.
 
@@ -205,7 +205,7 @@ For classification purposes, support vector machines aim at finding a hyperplane
 
 Weights of the dimensions (in the case of this research, genes) show the contribution of that specific dimension to the hyperplane produced by SVM. These weights can be used in order to rank the features from most important to least important. Recursive feature elimination exploits this ranking and adopts backward elimination strategy in order to iteratively eliminate least important genes. Starting from full set of genes, a linear SVM is estimated and least important genes are eliminated. During next iteration, a linear SVM is estimated using only remaining set of features and again fraction of genes is removed from set of all genes. This procedure continues until desired number of genes is reached or there are no more genes to eliminate. 
 
-One important parameter for RFE is the fraction of the genes, E, to be eliminated every iteration of feature elimination method. This parameter plays essential role in time complexity of the feature elimination. Reducing the value of E increases time complexity of the algorithm. In order to rank all the features at once, E should be set at 100\%. For purposes of this research, E is set at 20\%, meaning $\dfrac{1}{5}^{\mathrm{th}}$ of the remaining genes is eliminated at the end of each iteration. Genes are ranked by the absolute value of their weight during the iteration they have been eliminated at. Genes removed at later iterations are put on top of the ranking.
+One important parameter for RFE is the fraction of the genes, E, to be eliminated every iteration of feature elimination method. This parameter plays essential role in time complexity of the feature elimination. Reducing the value of E increases time complexity of the algorithm. In order to rank all the features at once, E should be set at 100\%. For purposes of this research, E is set at 20\%, meaning $\dfrac{1}{5}^{\mathrm{th}}$ of the remaining genes is eliminated at the end of each iteration. Genes are ranked by the absolute value of their weight during the iteration they have been eliminated. Genes removed at later iterations are put on top of the ranking.
 
 Sensitivity analysis of fraction E has been analysed in biomarker detection paper by Abeel \cite{bootstrapping} and it has been shown that choice of this parameter does not affect overall stability of feature selection. Thus, sensitivity analysis is disregarded in this article.
 
@@ -221,33 +221,33 @@ More formally, following notation can be made about feature selectors and result
 
 For aggregating the results obtained by bootstrapping the training data, one scheme proposed is the \textit{Complete linear aggregation}. Complete linear aggregation gives equal weight to different bootstrap samples and sums up the rankings of a given feature over all bootstrapped samples in order to get final result. Aggregated rank of all the features obtained from selector $\mathrm{FS}_{i}$ using complete linear aggregation can be computed as follows:
 \begin{equation}
-f_{i} = (\Sigma_{k = 1}^{t} \mathrm{fsr}_{i,k}^{1},...,\Sigma_{k = 1}^{t} \mathrm{fsr}_{i,k}^{N})
+f_{i} = (\Sigma_{k = 1}^{t} \mathrm{fsr}_{i,k}^{1},...,\Sigma_{k = 1}^{t} \mathrm{fsr}_{i,k}^{N}),
 \end{equation}
-, where $t$ represents the number of bootstrap samples used for ensemble feature selection. 
+where $t$ represents the number of bootstrap samples used for ensemble feature selection. 
 
 \subsection{Network-Cox model}
 
 As already mentioned, Cox regression performs and generalizes poorly when the dimensionality of input data is high. Most common techniques used in prior is the introduction of so-called L1 and L2 - norm penalties to Cox regression models. One novel approach proposed by Wei Zhang \cite{netcox} is the combination gene co-expression networks and cox models. Network-Cox models exploits the information about modular relations among genes which has been mostly ignored in previous survival analysis research and the fact that groups of genes are co-expressed under certain conditions.
 
-Gene co-expression network used in network-cox model is similar to the one computed in Section 3. It uses Pearson correlation coefficients for computing the correlation level among genes using gene expression dataset.
+Gene co-expression network used in Network-Cox model is similar to the one computed in Section 3. It uses Pearson correlation coefficients for computing the correlation level among genes using gene expression dataset.
 
-In order to include network information into cox regression models, following constraint is added to general formulation of Cox model mentioned in Formula 4.3:
+In order to include network information into Cox regression models, following constraint is added to general formulation of Cox model mentioned in (4.3):
 \begin{equation}
 l_\mathrm{pen}(\beta , h_{0}) = l(\beta,h_{0}) - \dfrac{1}{2} \lambda \beta '[(1 - \alpha)L + \alpha{I}]\beta ,
 \end{equation}
-where $ \lambda \beta '[(1 - \alpha)L + \alpha{I}]\beta $ represents the Laplacian constraint which is a encoding of a prior knowledge obtained from network. $L$ in equation 4.12, is a positive semidefinite matrix derived from network information, I is an identity matrix, $\lambda$ is a parameter controlling the weighting between total likelihood and the network constraint. $\alpha$ is another parameter controlling the weighting between network matrix and identity matrix in network constraint. Decision on the values of these variables are subject to Section 5.
+where $ \lambda \beta '[(1 - \alpha)L + \alpha{I}]\beta $ represents the Laplacian constraint which is a encoding of a prior knowledge obtained from network. $L$ in (4.12), is a positive semidefinite matrix derived from network information, I is an identity matrix, $\lambda$ is a parameter controlling the weighting between total likelihood and the network constraint. $\alpha$ is another parameter controlling the weighting between network matrix and identity matrix in network constraint. Decision on the values of these variables are subject to Section 5.
 
-The objective function defined by equation 4.12, can be solved by alternating the optimization of $\beta$ and baseline-hazard function $h_{0}(t)$. For optimization of $\beta$, Newton-Raphson method is used. Before, explaining the Newton-Raphson method for optimization, first and second derivatives of the objective function with respect to $\beta$ should be defined. First derivative of objective function is as follows:
+The objective function defined by (4.12), can be solved by alternating the optimization of $\beta$ and baseline-hazard function $h_{0}(t)$. For optimization of $\beta$, Newton-Raphson method is used. Before, explaining the Newton-Raphson method for optimization, first and second derivatives of the objective function with respect to $\beta$ should be defined. The first derivative of the objective function is as follows:
 \begin{equation}
 \dfrac{\delta{l_\mathrm{pen}(\beta , h_{0})}}{\delta{\beta}} = X'\Delta - \lambda{\Gamma}\beta ,
 \end{equation}
 where $\Delta = \delta - exp(X'\beta)H_{0}(t)$
 
-Second derivative of the objective function is defined as follows:
+The second derivative of the objective function is defined as follows:
 \begin{equation}
 \dfrac{\delta^2{l_\mathrm{pen}(\beta , h_{0})}}{\delta{\beta}\delta{\beta}} = -X'DX - \lambda{\Gamma} ,
 \end{equation}
-where D is the diagonal matrix with $D_{ii} = exp(X'_{i}\beta)H_{0}(t_{i})$. Now, given this information, Network-cox model can be solved using following algorithm proposed by Zhang \cite{netcox}.
+where D is the diagonal matrix with $D_{ii} = exp(X'_{i}\beta)H_{0}(t_{i})$. Now, given this information, Network-Cox model can be solved using following algorithm proposed by Zhang \cite{netcox}.
 
 
 \begin{algorithm}
@@ -285,7 +285,7 @@ l_\mathrm{pen}(\eta , h_{0}) = \Sigma^{n}_{i=1}(-exp(Z'_{i}\eta)H_{0}(t_{i})+\de
  - \dfrac{1}{2}\lambda{\eta'}Z\eta.
 \end{multline}
 
-In equation 4.16, $Z = X\Gamma^{-1}X'$. This equation is the dual form of the equation 4.12, and it is obvious that those two equations are equal but the problem dimension is reduced from $p$ to $n$. So, using the Algorithm 1 and equations 4.15 and 4.16, it is possible to optimize $\beta$ and solve Net-cox model. Figure 4.2, shows the overall flow, structure and the construction of the Network-Cox model explained earlier in the subsection.
+In (4.16), $Z = X\Gamma^{-1}X'$. This equation is the dual form of the(4.12), and it is obvious that those two equations are equal but the problem dimension is reduced from $p$ to $n$. So, using the Algorithm 1 and (4.15) and (4.16), it is possible to optimize $\beta$ and solve the Network-Cox model. Figure 4.2, shows the overall flow, structure and the construction of the Network-Cox model explained earlier in the subsection.
 
 \dkepic{netcox}{Overview and the overall flow of Network-Cox model, taken from \cite{netcox}}
 
@@ -296,16 +296,16 @@ Survival analysis mainly deals with the prediction of an event happening or not 
 \subsection{Logistic regression}
 Logistic regression is a statistical model that fits the non-linear model representing the relation between predictor and discrete variable. Discrete variable in case of this research, is the outcome class of interest(diabetes, dyslipidemia etc.) and predictors are genes and their expression profiles over all patients. In logistic regression analysis, outcome class is binary(true/false, 1/0, yes/no etc.) and main purpose of analysis is to assess the effect of multiple explanatory variables on the outcome class. As values of diabetes and dyslipidemia are logistic (yes/no), it is only fitting to exploit logistic regression.
 
-As name already suggests, logistic regression uses logistic function for prediction step. Logistic function is defined as follows:
+As name already suggests, logistic regression uses a logistic function for prediction step. The logistic function is defined as follows:
 \begin{equation}
-F(t) = \dfrac{e^{t}}{e^{t} + 1}
+F(t) = \dfrac{e^{t}}{e^{t} + 1},
 \end{equation}
-, where $t$ can be viewed as being a linear function of an predictor $x$. Then, logistic function can be written as:
+where $t$ can be viewed as being a linear function of an predictor $x$. Then, logistic function can be written as:
 \begin{equation}
 F(x) = \dfrac{1}{1 + e^{-(\beta_{0} + \beta_{1}x)}}
 \end{equation}
 
-Equation 5.2 determines the probability assigned by logistic regression for a probability of having a success or not. Figure 5.1, shows the plot of simple logistic function. Logistic function is extra useful because it can take any value between negative infinity and positive infinity as its input, and return the value between 0 and 1, which in its turn is interpretable as a probability. $F(x)$ illustrates that the probability of outcome class being equal to a case is equal to the value of the logistic function of the linear regression expression.
+(5.2) determines the probability assigned by logistic regression for a probability of having a success or not. Figure 5.1, shows the plot of simple logistic function. Logistic function is extra useful because it can take any value between negative infinity and positive infinity as its input, and return the value between 0 and 1, which in its turn is interpretable as a probability. $F(x)$ illustrates that the probability of outcome class being equal to a case is equal to the value of the logistic function of the linear regression expression.
 
 \dkepic{logistic}{Simple plot of a logistic function}
 
@@ -323,15 +323,15 @@ Results of each of these experiments is discussed in next subsections.
 
 \subsection{Module detection}
 
-For purposes of module detection, WGCNA package available for R programming language has been used. After the discussion with specialists in the field, it was agreed to set minimal allowable size of the module to be at 80. Figure 5.1, shows the dendrogram of the module detection. As it can be seen from Figure 5.1, there were 13 modules detected by Weighted Gene Co-expression Network analysis. Grey module represents the genes that were not included in any of the modules.
-\dkepic{dendrogram}{Module detection dendrogram}
+For purposes of module detection, WGCNA package available for R programming language has been used. After the discussion with specialists in the field, it was agreed to set minimal allowable size of the module to be at 80. Figure 5.1, shows the dendrogram of the module detection. As it can be seen from Figure 5.1, there were 13 modules detected by WGCNA. Grey module represents the genes that were not included in any of the modules.
 
 These modules represent possible biological connections among genes, as already mentioned in Section 3. To get better understanding of these results, further analysis can be applied on modules separately, which is out of scope of this paper.
 
 \subsection{Feature Selection}
 
-First experiment was performed in order to rank the features considering their contribution and weight at prediction of different clinical data. One variable of interest in feature selection experiments was diabetes. Diabetes feature is a binary one, where 1 represents patient having diabetes and 0 otherwise. As mentioned in Section 4, Ensemble feature selection technique was applied on the data set. For this experiment, 10 bootstrapped data sets were used to train RFE model on them and the results of these 10 feature selectors were aggregated. Following table shows top 10 genes (Associated diseases have been retrieved from gene card website):
-\begin{center}
+First experiment was performed in order to rank the features considering their contribution and weight at prediction of different clinical data. One variable of interest in feature selection experiments was diabetes. Diabetes feature is a binary one, where 1 represents patient having diabetes and 0 otherwise. As mentioned in Section 4, Ensemble feature selection technique was applied on the data set. For this experiment, 10 bootstrapped data sets were used to train RFE model on them and the results of these 10 feature selectors were aggregated. Table 1 shows top 10 genes (Associated diseases have been retrieved from gene card website):
+\begin{table}
+\centering
 \begin{tabular}{|l|l|p{4cm}|}
 \hline
 Ranking & Gene ID & Already related diseases/disorders\\ \hline
@@ -346,21 +346,39 @@ Ranking & Gene ID & Already related diseases/disorders\\ \hline
 9. & NQO2 & Agranulocytosis\\ \hline
 10. & TIMM22 & Unknown\\ \hline
 \end{tabular}
-\end{center}
 
-From results, it can be seen that, top ranked gene \textit{UTS2} has already been associated with cardiovascular diseases and atherosclerosis. Additionally, most of the genes in top 10 have been shown to have relevance with atherosclerosis. For example,
+\caption{Top 10 contributing genes to the RFE model of diabetes}
+\label{Top 10 contributing genes to the RFE model of diabetes}
+\end{table}
+
+From Table 1, it can be seen that, top ranked gene \textit{UTS2} has already been associated with cardiovascular diseases and atherosclerosis. Additionally, most of the genes in top 10 have been shown to have relevance with atherosclerosis. For example,
 \textit{PRKAR1A} has been associated with Hypocalcemia, which in its turn has chronic renal failure as its cause. Renal failures are known to be of importance for diagnosis of atherosclerosis and is a factor taken into account by physicians and doctors. Furthermore, \textit{GRHPR} gene directly relates to renal failure. \textit{KIAA0226L} is associated with esophagitis which is shown to lead to higher tendency for atherosclerosis, diabetes and heart failure \cite{esophagitis}.
 
-Additionally to the facts mentioned above, there are also two genes in top 10, namely \textit{CLEC4F} and \textit{TIMM22}, are not known to be associated with any disease, making their possible future analysis more interesting.
+On top of the facts mentioned, there are also two genes in top 10, namely \textit{CLEC4F} and \textit{TIMM22}, that are not known to be associated with any disease, making their possible future analysis more interesting.
 
-Next to the diabetes, ensemble feature selection with the same parameters as mentioned above was applied to find the most important genes contributing to the prediction of dyslipidemia. Same as in case for diabetes, top 10 genes are shown below:
-\begin{center}
-\begin{tabular}{|l|l|l|}
+Next to the diabetes, ensemble feature selection with the same parameters as mentioned above was applied to find the most important genes contributing to the prediction of dyslipidemia. Top 10 genes are presented on Table 2.
+\begin{table}
+\centering
+\begin{tabular}{|l|l|p{4cm}|}
 \hline
 Ranking & Gene ID & Associated disease/disorder \\ \hline
-
+1. & SNAP29 & Schizophrenia\\ \hline
+2. & CLEC4D & Immunodeficiency\\ \hline
+3. & DNAJC15 & Ovarian cancer and Adenocarcinoma\\ \hline
+4. & GSTT1 & Cancer and Asbestosis\\ \hline
+5. & CHST7 & Thyroiditis\\ \hline
+6. & TNF & Inflammation and tumors\\ \hline
+7. & TNNT1 & Myocardial infarction and type 1 Diabetes\\ \hline
+8. & CMPK2 & Multiple sclerosis\\ \hline
+9. & LRRN3 & Neuroblastoma\\ \hline
+10. & IKZF1 & Non-hodgkin lymphoma and Lupus Erythematosus\\ \hline
 \end{tabular}
-\end{center}
+
+\caption{Top 10 contributing genes to the RFE model of dyslipidemia}
+\label{Top 10 contributing genes to the RFE model of dyslipidemia}
+\end{table}
+
+From Table 2, it can be seen that, as in the case of diabetes, some of the genes assessed as being more contributing by Ensemble Feature Selection have already been associated with atherosclerosis. Also, there were genes in the top 50, that were associated with atherosclerosis but those genes are not included in Table 2, as they were not part of the top 10. One example of such a gene is \textit{SELL}.
 
 Above mentioned results show that feature selection on its own can determine important genes in the study of cardiovascular diseases. Next to the ability of finding target genes already associated with disease, it also offers possible new target genes that should be further analysed. These conclusions suggest that it is an interesting alternative to include the feature selection techniques in future research.
 
@@ -382,7 +400,8 @@ Next step on analysis of the genes that show high rankings during feature select
 Main purpose of regression analysis was to further identify more important genes or get the results already obtained by other scholars in their research.
 
 First variable of interest as already mentioned was the diabetes among the patients. Top 50 genes obtained from ensemble feature selection were used for this experiment. As table gets very big, only more interesting genes, their p-values and their rankings obtained from ensemble feature selection are shown below:
-\begin{center}
+\begin{table}
+\centering
 \begin{tabular}{|l|l|l|}
 \hline
 Gene ID & p-value & Ranking \\ \hline
@@ -397,29 +416,32 @@ FPR1 & 0.000875 & 14 \\ \hline
 ENC1 & 0.005429 & 17 \\ \hline
 CLEC4F & 0.045308 & 7 \\ \hline
 \end{tabular}
-\end{center}
+\caption{P-Values of more significant genes from top 50 selected by EFS for diabetes model}
+\end{table}
 
-As it can be seen from these results, all of the above mentioned genes are significant for the prediction of the diabetes. Among them, \textit{NQO2,UTS2,HIST1H4C} were among the top 10 genes and their relevance to overall atherosclerosis has already been mentioned in Feature selection experiments. \textit{SYT10} is one gene that should be taken into account as it has very low p-value, meaning higher significance of this gene and also added fact of it being in top 50 genes chosen by feature selection technique and not being associated with any kind of disease or disorder, makes \textit{SYT10} gene an interesting target for future research. Furthermore, \textit{CLEC4F} has not been associated with any diseases so far, but it both appeared in most chosen 10 genes and it shows good enough level of contribution to logistic model, as its p-value is smaller than 0.05, which is a value adopted and used by almost every research group and scholar for assessment of significance. One more interesting gene in above table is \textit{MMP9}, because it has been associated with atherosclerosis, inflammation and cardiovascular diseases. \textit{ID1} has been associated with neovascularization which is related to atherosclerosis. These facts further prove that, feature selection and logistic regression are interesting alternatives and their results, especially the genes that have not been associated with atherosclerosis, should further be analysed.
+As it can be seen from Table 4, all of the above mentioned genes are significant for the prediction of the diabetes. Among them, \textit{NQO2,UTS2,HIST1H4C} were among the top 10 genes and their relevance to overall atherosclerosis has already been mentioned in Feature selection experiments. \textit{SYT10} is one gene that should be taken into account as it has very low p-value, meaning higher significance of this gene and also added fact of it being in top 50 genes chosen by feature selection technique and not being associated with any kind of disease or disorder, makes \textit{SYT10} gene an interesting target for future research. Furthermore, \textit{CLEC4F} has not been associated with any diseases so far, but it both appeared in most chosen 10 genes and it shows good enough level of contribution to logistic model, as its p-value is smaller than 0.05, which is a value adopted and used by almost every research group and scholar for assessment of significance. One more interesting gene in above table is \textit{MMP9}, because it has been associated with atherosclerosis, inflammation and cardiovascular diseases. \textit{ID1} has been associated with neovascularization which is related to atherosclerosis. These facts further prove that, feature selection and logistic regression are interesting alternatives and their results, especially the genes that have not been associated with atherosclerosis, should further be analysed.
 
 Next experiment was the evaluation of significance of top 50 genes for the case where prediction class (independent variable) is dyslipidemia. As in case of diabetes, this variable is binary (0 - no, 1 - yes). Following table shows the genes with lowest p-values, their gene IDs and their rankings obtained from feature selection experiment.
-\begin{center}
+\begin{table}
+\centering
 \begin{tabular}{|l|l|l|}
 Gene ID & p-value & Ranking \\ \hline
 \hline
 \end{tabular}
-\end{center}
+\caption{P-Values of the more significant genes out of top 50 chosen by EFS for dyslipidemia model}
+\end{table}
 
 \section{Conclusion}
 
 As a conclusion, Weighted gene co-expression networks are still an interesting approach that is used by many others. Modules detected by WGCNA package could have been further analysed for enriched pathways, ontologies or transcription factors, but this kind of analysis was out of scope of this paper.
 
-Feature selection techniques combined with regression models are seem as an interesting alternative for future research, as their results present the genes already related to cardiovascular diseases. Next to these genes, results also suggest to further analyse some genes, namely \textit{SYT10} and \textit{CLEC4F}. These methods have not been used extensively by other scholars, making them more appealing to exploit. Additionally, Network-Cox models presented interesting approach for dealing with dimensionality problems of simple Cox models by including co-expression network information in their model. Similar to logistic regression and feature selection, Network-Cox model analysis offered new target genes that had not been associated with cardiovascular diseases, namely \textit{gene1} and \textit{gene2}. Also, Network-Cox models were able to point out the genes that have already been found by other research groups only by knowing their expression profiles, which indicate their power and makes them an extra option in future research. One thing that should be kept in mind that, these genes are possible candidate genes that can turn out to be target genes relating to the disease, but more complex analysis should be done on their functional and structural models.
+Feature selection techniques combined with regression models seemed to be an interesting alternative, as their results present the genes already related to cardiovascular diseases. Next to these genes, results also suggest to further analyse some genes, namely \textit{SYT10} and \textit{CLEC4F}. These methods have not been used extensively by other scholars, making them more appealing to exploit. Additionally, Network-Cox models presented interesting approach for dealing with dimensionality problems of simple Cox models by including co-expression network information in their model. Similar to logistic regression and feature selection, Network-Cox model analysis offered new candidate target genes that had not been associated with cardiovascular diseases, namely \textit{gene1} and \textit{gene2}. Also, Network-Cox models were able to point out the genes that have already been related to atherosclerosis. One thing that should be kept in mind that, these genes are possible candidate genes that can turn out to be target genes relating to the disease, but more complex analysis should be done on their functional and structural models.
 
 \section{Future Work}
 
 As already mentioned, one possible further analysis for better understanding of the biological processes happening among genes, Gene Ontology Enrichment Analysis, Transcription Factor analysis and MicroRNA analysis could have been performed on the modules detected by WGCNA modules. Furthermore, intramodular connectivity analysis can be included for finding central hub genes of each module, which has been shown to be of interest for research \cite{wgcna2}.
 
-Additionally, Feature Selection experiments could be further extended to include different techniques in order to improve results and possibly find more target genes for future research. Also, Ensemble Feature Selection, Logistic Regression and Network-Cox models explained in this paper can be used to examine the relation between genes and different variables that are of interest for cardiovascular research that were not examined in this paper. Multi-class regression might have been added for the assessment of the link between the genes and multiple variables of interest at the same time.
+Additionally, Feature Selection experiments could be further extended to include different techniques in order to improve results and possibly find more target genes for future research. One experiment not performed as a part of this paper is the combination of Feature selection and simple Cox model, which might be an interesting approach for subsequent research. Also, Ensemble Feature Selection, Logistic Regression and Network-Cox models explained in this paper can be used to examine the relation between genes and different variables that are of interest for cardiovascular research that were not examined in this paper. Multi-class regression might have been added for the assessment of the link between the genes and multiple variables of interest at the same time.
 
 Once results are obtained from above mentioned techniques, more in-detail analysis of candidates for being a target gene should be performed in order to prove their relevance to the atherosclerosis and its symptoms.
 

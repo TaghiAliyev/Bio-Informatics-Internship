@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.1.9)  23 JUN 2014 15:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.1.9)  25 JUN 2014 23:28
 entering extended mode
 **Thesis.tex
 
@@ -304,7 +304,7 @@ Underfull \hbox (badness 2261) in paragraph at lines 47--48
 File: flowchart.png Graphic file (type png)
  <use flowchart.png>
 Package pdftex.def Info: flowchart.png used on input line 78.
-(pdftex.def)             Requested size: 108.78749pt x 252.94499pt.
+(pdftex.def)             Requested size: 76.15143pt x 177.06458pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -319,20 +319,14 @@ File: powerNew.png Graphic file (type png)
 <use powerNew.png>
 Package pdftex.def Info: powerNew.png used on input line 99.
 (pdftex.def)             Requested size: 252.94499pt x 140.78442pt.
-
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 99--99
-[][] 
- []
-
-<scaleFreeNew.png, id=22, 637.63219pt x 321.45094pt>
+ <scaleFreeNew.png, id=22, 637.63219pt x 321.45094pt>
 File: scaleFreeNew.png Graphic file (type png)
- <use scaleFreeNew.png>
+
+<use scaleFreeNew.png>
 Package pdftex.def Info: scaleFreeNew.png used on input line 105.
 (pdftex.def)             Requested size: 252.94499pt x 127.51862pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 105--105
-[][] 
- []
+Underfull \vbox (badness 1515) has occurred while \output is active []
 
 
 Underfull \hbox (badness 1466) in paragraph at lines 115--116
@@ -347,13 +341,13 @@ File: SVM.png Graphic file (type png)
  <use SVM.png>
 Package pdftex.def Info: SVM.png used on input line 202.
 (pdftex.def)             Requested size: 252.94499pt x 218.85617pt.
-
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 202--202
-[][] 
+ [5 <C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/
+Thesis/SVM.png>]
+Underfull \hbox (badness 1436) in paragraph at lines 240--241
+\OT1/cmr/m/n/10 Raphson method is used. Be-fore, ex-plain-ing the
  []
 
-[5 <C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/T
-hesis/SVM.png>] [6]
+[6]
 Underfull \hbox (badness 5954) in paragraph at lines 249--251
 \OT1/cmr/m/n/10 where D is the di-ag-o-nal ma-trix with $\OML/cmm/m/it/10 D[] \
 OT1/cmr/m/n/10 =$
@@ -374,38 +368,13 @@ File: netcox.png Graphic file (type png)
  <use netcox.png>
 Package pdftex.def Info: netcox.png used on input line 290.
 (pdftex.def)             Requested size: 252.94499pt x 171.58958pt.
-
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 290--290
-[][] 
- []
-
-[7 <C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/T
-hesis/netcox.png>] <logistic.png, id=50, 602.25pt x 401.5pt>
+ [7 <C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/
+Thesis/netcox.png>] <logistic.png, id=50, 602.25pt x 401.5pt>
 File: logistic.png Graphic file (type png)
-
-<use logistic.png>
+ <use logistic.png>
 Package pdftex.def Info: logistic.png used on input line 310.
 (pdftex.def)             Requested size: 252.94499pt x 168.62885pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 310--310
-[][] 
- []
-
-<dendrogram.png, id=51, 554.82281pt x 444.15938pt>
-File: dendrogram.png Graphic file (type png)
- <use dendrogram.png>
-Package pdftex.def Info: dendrogram.png used on input line 327.
-(pdftex.def)             Requested size: 252.94499pt x 202.49269pt.
-
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 327--327
-[][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8 <C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/
-Thesis/logistic.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 337--337
 []\OT1/cmr/m/n/10 Already re-lated dis-
  []
@@ -420,22 +389,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 345--345
 []\OT1/cmr/m/n/10 Cervical in-traep-ithe-lial
  []
 
-[9 <C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/T
-hesis/dendrogram.png>]
-Underfull \vbox (badness 2600) has occurred while \output is active []
+[8 <C:/Users/Taghi/eclipseWorkspace/School/Project/Bio-Informatics-Internship/T
+hesis/logistic.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 364--364
+[]\OT1/cmr/m/n/10 Associated dis-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 374--374
+[]\OT1/cmr/m/n/10 Non-hodgkin lym-phoma
+ []
+
+[9]
+Underfull \vbox (badness 2237) has occurred while \output is active []
 
  [10]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
 
-Underfull \hbox (badness 1320) in paragraph at lines 441--442
+Underfull \hbox (badness 1320) in paragraph at lines 463--464
 []\OT1/cmr/m/n/10 Jia Xue \OT1/cmr/m/it/10 et al.\OT1/cmr/m/n/10 , "Transcripto
 me-Based Net-work
  []
 
 
-Underfull \hbox (badness 1975) in paragraph at lines 442--443
+Underfull \hbox (badness 1975) in paragraph at lines 464--465
 []\OT1/cmr/m/n/10 Albert, R. and Barabasi, A. L., "Emer-gence
  []
 
@@ -443,13 +422,13 @@ Underfull \hbox (badness 1975) in paragraph at lines 442--443
 (C:\Users\Taghi\eclipseWorkspace\School\Project\Bio-Informatics-Internship\Thes
 is\Thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 4224 strings out of 493921
- 54812 string characters out of 3147283
- 150946 words of memory out of 3000000
- 7484 multiletter control sequences out of 15000+200000
+ 4221 strings out of 493921
+ 54841 string characters out of 3147283
+ 157959 words of memory out of 3000000
+ 7482 multiletter control sequences out of 15000+200000
  10507 words of font info for 38 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 31i,12n,45p,1482b,412s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 31i,12n,45p,1476b,412s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
 x10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Prog
@@ -465,9 +444,9 @@ les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /public/amsfonts/cm/cmti10.pfb>
-Output written on Thesis.pdf (11 pages, 592535 bytes).
+Output written on Thesis.pdf (11 pages, 498259 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
+ 115 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
